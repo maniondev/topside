@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topside — Roll. Think. Solve.</title>
+<meta name="description" content="Roll the cube. Land on every tile. A pure logic puzzle for iOS and Android.">
+<link rel="icon" type="image/png" href="topside1024.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream:   #F0EAE0;
+    --red:     #E03E52;
+    --red-dk:  #B82E3F;
+    --gold:    #D4A82A;
+    --orange:  #E07830;
+    --brown:   #5A4420;
+    --text:    #1E1410;
+    --muted:   #7A6050;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── background grid texture ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--brown) 1px, transparent 1px),
+      linear-gradient(90deg, var(--brown) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.045;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ── header strip ── */
+  .header-strip {
+    width: calc(100% + 48px);
+    margin-left: -24px;
+    height: 6px;
+    background: linear-gradient(90deg, var(--red) 0%, var(--orange) 50%, var(--gold) 100%);
+  }
+
+  /* ── hero ── */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 56px;
+    text-align: center;
+  }
+
+  .icon-wrap {
+    width: 120px;
+    height: 120px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow:
+      0 2px 0 rgba(0,0,0,0.08),
+      0 8px 24px rgba(90,40,10,0.18),
+      0 24px 48px rgba(90,40,10,0.10);
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+  }
+
+  .icon-wrap img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .wordmark {
+    margin-top: 28px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(52px, 14vw, 72px);
+    letter-spacing: -2px;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--red) 0%, var(--orange) 60%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .tagline {
+    margin-top: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  .tagline span {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ── description ── */
+  .desc {
+    margin-top: 32px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+    text-align: center;
+    max-width: 340px;
+  }
+
+  /* ── divider ── */
+  .divider {
+    margin: 40px 0;
+    width: 48px;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--red), var(--orange));
+  }
+
+  /* ── download buttons ── */
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 24px;
+    border-radius: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn:hover  { transform: translateY(-2px); }
+  .btn:active { transform: translateY(0) scale(0.98); }
+
+  .btn-ios {
+    background: var(--text);
+    color: var(--cream);
+    box-shadow: 0 4px 16px rgba(30,20,10,0.22);
+  }
+
+  .btn-ios:hover { box-shadow: 0 8px 24px rgba(30,20,10,0.28); }
+
+  .btn-android {
+    background: var(--red);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(224,62,82,0.30);
+  }
+
+  .btn-android:hover { box-shadow: 0 8px 24px rgba(224,62,82,0.40); }
+
+  .btn svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    fill: currentColor;
+  }
+
+  .btn-label { display: flex; flex-direction: column; text-align: left; }
+  .btn-label-sub { font-size: 11px; font-weight: 400; opacity: 0.75; letter-spacing: 0.04em; }
+  .btn-label-main { font-size: 16px; font-weight: 500; line-height: 1.2; }
+
+  /* ── features ── */
+  .features {
+    margin-top: 56px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .feat {
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(90,68,32,0.10);
+    border-radius: 16px;
+    padding: 18px 16px;
+  }
+
+  .feat-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .feat-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .feat-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── free badge ── */
+  .free-badge {
+    margin-top: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(90,68,32,0.12);
+    border-radius: 100px;
+    padding: 8px 20px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .free-badge strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ── footer ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  footer a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* ── entrance animation ── */
+  .hero, .buttons, .features, .free-badge {
+    animation: rise 0.6s ease both;
+  }
+  .buttons   { animation-delay: 0.1s; }
+  .features  { animation-delay: 0.2s; }
+  .free-badge { animation-delay: 0.3s; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="header-strip"></div>
+
+<main>
+  <div class="hero">
+    <div class="icon-wrap">
+      <img src="topside1024.png" alt="Topside app icon">
+    </div>
+
+    <h1 class="wordmark">Topside</h1>
+    <p class="tagline"><span>Roll.</span> Think. <span>Solve.</span></p>
+
+    <p class="desc">
+      A cube logic puzzle where every move matters.
+      Roll the cube across the grid and land each face
+      on the right tile. Simple to learn, hard to master.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="buttons">
+    <!-- Replace # with your actual App Store URL at launch -->
+    <a href="#" class="btn btn-ios" id="ios-btn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      <span class="btn-label">
+        <span class="btn-label-sub">Download on the</span>
+        <span class="btn-label-main">App Store</span>
+      </span>
+    </a>
+
+    <!-- Replace # with your actual Google Play URL at launch -->
+    <a href="#" class="btn btn-android" id="android-btn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.18 23.76c.3.17.64.22.99.16l11.7-11.7L12 9.36 3.18 23.76zm17.35-11.2-2.93-1.67-3.27 3.27 3.27 3.27 2.96-1.69c.84-.48.84-1.69-.03-2.18zM2.01 1.56C1.7 1.89 1.5 2.4 1.5 3.06v17.88c0 .66.2 1.17.52 1.5L2.1 22.5l10.02-10.02v-.24L2.1 2.22l-.09-.66zm12.14 8.28L3.18.18c-.35-.06-.69-.01-.99.16l8.81 14.4 3.15-4.9z"/></svg>
+      <span class="btn-label">
+        <span class="btn-label-sub">Get it on</span>
+        <span class="btn-label-main">Google Play</span>
+      </span>
+    </a>
+  </div>
+
+  <div class="features">
+    <div class="feat">
+      <span class="feat-icon">🎲</span>
+      <div class="feat-title">Pure logic</div>
+      <div class="feat-desc">No timers, no randomness. Every puzzle has one clean solution.</div>
+    </div>
+    <div class="feat">
+      <span class="feat-icon">🧩</span>
+      <div class="feat-title">Dozens of levels</div>
+      <div class="feat-desc">From beginner boards to brutally hard configurations.</div>
+    </div>
+    <div class="feat">
+      <span class="feat-icon">🎨</span>
+      <div class="feat-title">Multiple themes</div>
+      <div class="feat-desc">Unlock new visual styles as you progress.</div>
+    </div>
+    <div class="feat">
+      <span class="feat-icon">📴</span>
+      <div class="feat-title">Play anywhere</div>
+      <div class="feat-desc">No internet required. Puzzle on the go.</div>
+    </div>
+  </div>
+
+  <div class="free-badge">
+    <strong>Free to play</strong> &middot; Optional one-time upgrade · No subscription
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Topside &nbsp;&middot;&nbsp; <a href="#">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>
