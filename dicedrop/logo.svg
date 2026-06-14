@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <filter id="cardshadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#3A2F1E" flood-opacity="0.22"></feDropShadow>
+    </filter>
+  </defs>
+  <g>
+    
+    <g transform="translate(442 582) rotate(-4)" filter="url(#cardshadow)">
+      <rect x="-250" y="-250" width="500" height="500" rx="90" fill="#E5384A"></rect>
+      <circle cx="0" cy="0" r="26" fill="#14100C" fill-opacity="0.82"></circle>
+    </g>
+    
+    <g transform="translate(512 512)" filter="url(#cardshadow)">
+      <rect x="-250" y="-250" width="500" height="500" rx="90" fill="#F08A2C"></rect>
+      <circle cx="-110" cy="-110" r="26" fill="#14100C" fill-opacity="0.82"></circle>
+      <circle cx="110" cy="110" r="26" fill="#14100C" fill-opacity="0.82"></circle>
+    </g>
+    
+    <g transform="translate(582 442) rotate(4)" filter="url(#cardshadow)">
+      <rect x="-250" y="-250" width="500" height="500" rx="90" fill="#F1C84B"></rect>
+      <circle cx="-125" cy="-125" r="26" fill="#14100C" fill-opacity="0.82"></circle>
+      <circle cx="0" cy="0" r="26" fill="#14100C" fill-opacity="0.82"></circle>
+      <circle cx="125" cy="125" r="26" fill="#14100C" fill-opacity="0.82"></circle>
+    </g>
+  </g>
+</svg>
