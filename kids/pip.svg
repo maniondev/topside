@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs><clipPath id="clip-warm-happy"><path d="M-73.16182603178203,-309.75999986156177Q0,-352 73.16182603178203,-309.75999986156177L231.67911476821797,-218.24000013843823Q304.8409408,-176 304.8409408,-91.52000000000001L304.8409408,91.52000000000001Q304.8409408,176 231.67911476821797,218.24000013843823L73.16182603178203,309.75999986156177Q0,352 -73.16182603178203,309.75999986156177L-231.67911476821797,218.24000013843823Q-304.8409408,176 -304.8409408,91.52000000000001L-304.8409408,-91.52000000000001Q-304.8409408,-176 -231.67911476821797,-218.24000013843823Z"></path></clipPath></defs>
+  <g transform="translate(512 530) scale(0.92)">
+    
+    <g transform="rotate(0)">
+      <path d="M-298,40 L-372,-78" fill="none" stroke="#1B1410" stroke-width="84" stroke-linecap="round"></path><path d="M-298,40 L-372,-78" fill="none" stroke="#E5384A" stroke-width="56" stroke-linecap="round"></path><circle cx="-372" cy="-78" r="31" fill="#E5384A" stroke="#1B1410" stroke-width="14"></circle><path d="M298,40 L372,-78" fill="none" stroke="#1B1410" stroke-width="84" stroke-linecap="round"></path><path d="M298,40 L372,-78" fill="none" stroke="#E5384A" stroke-width="56" stroke-linecap="round"></path><circle cx="372" cy="-78" r="31" fill="#E5384A" stroke="#1B1410" stroke-width="14"></circle>
+      <g clip-path="url(#clip-warm-happy)">
+      <polygon points="-304.8409408,-176 0,0 0,352 -304.8409408,176" fill="#F1C84B"></polygon>
+      <polygon points="304.8409408,-176 304.8409408,176 0,352 0,0" fill="#F08A2C"></polygon>
+      <polygon points="0,-352 304.8409408,-176 0,0 -304.8409408,-176" fill="#E5384A"></polygon>
+      <path d="M304.8409408,-176 L0,0 L0,352 M-304.8409408,-176 L0,0" fill="none" stroke="#1B1410" stroke-width="20" stroke-linejoin="round" stroke-linecap="round"></path>
+    </g>
+    <path d="M-73.16182603178203,-309.75999986156177Q0,-352 73.16182603178203,-309.75999986156177L231.67911476821797,-218.24000013843823Q304.8409408,-176 304.8409408,-91.52000000000001L304.8409408,91.52000000000001Q304.8409408,176 231.67911476821797,218.24000013843823L73.16182603178203,309.75999986156177Q0,352 -73.16182603178203,309.75999986156177L-231.67911476821797,218.24000013843823Q-304.8409408,176 -304.8409408,91.52000000000001L-304.8409408,-91.52000000000001Q-304.8409408,-176 -231.67911476821797,-218.24000013843823Z" fill="none" stroke="#1B1410" stroke-width="28" stroke-linejoin="round" stroke-linecap="round"></path>
+      <path d="M-195.28,79.2736 Q-118,147.28 -40.72,79.2736" fill="none" stroke="#1B1410" stroke-width="26" stroke-linecap="round"></path><path d="M40.72,79.2736 Q118,147.28 195.28,79.2736" fill="none" stroke="#1B1410" stroke-width="26" stroke-linecap="round"></path>
+      
+    </g>
+  </g>
+</svg>

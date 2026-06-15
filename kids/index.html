@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topside: Kids — Coming Soon</title>
+<meta name="description" content="Topside: Kids — 8 dice-themed mini-games covering early numeracy and literacy for ages 3–7. Coming soon for iOS and Android.">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=DM+Sans:wght@400;500&family=Fredoka+One&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream:  #F0EAE0;
+    --red:    #E5384A;
+    --orange: #EA862A;
+    --gold:   #DFB945;
+    --text:   #1E1410;
+    --muted:  #7A6050;
+  }
+
+  html, body { height: 100%; overflow: hidden; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url('bg.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .stripe {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--red) 0%, var(--orange) 50%, var(--gold) 100%);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 24px 0;
+    text-align: center;
+  }
+
+  .logo {
+    width: clamp(180px, 34vw, 290px);
+    height: clamp(180px, 34vw, 290px);
+    margin-bottom: calc(-7% + 20px);
+    animation: float 3.5s ease-in-out infinite;
+    filter: drop-shadow(0 12px 28px rgba(90,40,10,0.15));
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50%       { transform: translateY(-10px) rotate(2deg); }
+  }
+
+  .eyebrow {
+    margin-bottom: 4px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: clamp(13px, 3vw, 16px);
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+
+  .wordmark {
+    margin-bottom: 4px;
+    font-family: 'Fredoka One', cursive;
+    font-weight: 400;
+    font-size: clamp(96px, 24vw, 140px);
+    letter-spacing: 0px;
+    line-height: 1;
+    color: var(--red);
+  }
+
+  .subtitle {
+    margin-top: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: clamp(15px, 3.5vw, 18px);
+    letter-spacing: 0.2em;
+    color: var(--muted);
+  }
+
+  .divider {
+    margin: 20px auto;
+    width: 40px;
+    height: 2px;
+    border-radius: 1px;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+  }
+
+  .desc {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: clamp(14px, 3vw, 16px);
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 400px;
+  }
+
+  .buttons {
+    margin-top: 28px;
+    margin-bottom: -12px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    width: 100%;
+    max-width: 290px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border-radius: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .btn svg { flex-shrink: 0; }
+
+  .btn-ios {
+    background: var(--text);
+    color: var(--cream);
+    box-shadow: 0 4px 16px rgba(30,20,10,0.20);
+  }
+
+  .btn-android {
+    background: var(--red);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(229,56,74,0.28);
+  }
+
+  .btn-label { display: flex; flex-direction: column; text-align: left; }
+  .btn-label-sub  { font-size: 10px; font-weight: 400; opacity: 0.7; letter-spacing: 0.05em; line-height: 1; }
+  .btn-label-main { font-size: 15px; font-weight: 500; line-height: 1.3; }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 0 24px 18px;
+    flex-shrink: 0;
+  }
+
+  .footer-links {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .footer-links a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+
+  main > * { animation: rise 0.55s ease both; }
+  .eyebrow   { animation-delay: 0s; }
+  .logo      { animation-delay: 0.04s; }
+  .wordmark  { animation-delay: 0.07s; }
+  .subtitle  { animation-delay: 0.12s; }
+  .divider   { animation-delay: 0.17s; }
+  .desc      { animation-delay: 0.22s; }
+  .buttons   { animation-delay: 0.28s; }
+  footer     { animation: rise 0.55s ease both; animation-delay: 0.32s; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="stripe"></div>
+
+<main>
+  <img src="logo.svg" alt="Topside Kids logo" class="logo">
+  <p class="eyebrow">Topside</p>
+  <h1 class="wordmark">Kids</h1>
+  <p class="subtitle">Coming Soon</p>
+  <div class="divider"></div>
+  <p class="desc">Eight dice-themed mini-games for ages 3–7. Count pips, sort dice, spell words, and more — with Pip the friendly dice as your guide. Free to try, one-time unlock, no ads, no subscription.</p>
+
+  <div class="buttons">
+    <a href="#" class="btn btn-ios">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+      </svg>
+      <span class="btn-label">
+        <span class="btn-label-sub">Coming soon on the</span>
+        <span class="btn-label-main">App Store</span>
+      </span>
+    </a>
+
+    <a href="#" class="btn btn-android">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+        <path d="M3 20.5v-17c0-.83 .94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/>
+      </svg>
+      <span class="btn-label">
+        <span class="btn-label-sub">Coming soon on</span>
+        <span class="btn-label-main">Google Play</span>
+      </span>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <p class="footer-links">&copy; 2026 Topside &nbsp;&middot;&nbsp; <a href="https://topside.games">Topside Games</a></p>
+</footer>
+
+</body>
+</html>
