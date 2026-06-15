@@ -30,7 +30,7 @@
     --card-border: rgba(90,68,32,0.12);
   }
 
-  html, body { height: 100%; overflow: hidden; }
+  html, body { height: 100%; overflow-y: auto; }
 
   body {
     background: var(--cream);
@@ -69,14 +69,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 24px 8px;
+    padding: 4px 24px 0;
     text-align: center;
   }
 
   .logo {
-    width: clamp(140px, 28vw, 200px);
-    height: clamp(140px, 28vw, 200px);
-    margin-bottom: -6%;
+    width: clamp(200px, 38vw, 320px);
+    height: clamp(200px, 38vw, 320px);
+    margin-top: -7%;
+    margin-bottom: -9%;
     animation: float 4s ease-in-out infinite;
     filter: drop-shadow(0 16px 32px rgba(90,40,10,0.18));
   }
@@ -87,9 +88,10 @@
   }
 
   .wordmark {
+    margin-bottom: 12px;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
-    font-size: clamp(96px, 24vw, 140px);
+    font-size: clamp(104px, 26vw, 156px);
     letter-spacing: -1px;
     line-height: 1;
     color: var(--text);
@@ -99,13 +101,13 @@
     margin-top: 8px;
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
-    font-size: clamp(12px, 2.8vw, 14px);
+    font-size: clamp(15px, 3.5vw, 18px);
     letter-spacing: 0.2em;
     color: var(--muted);
   }
 
   .divider {
-    margin: 16px auto;
+    margin: 20px auto;
     width: 40px;
     height: 2px;
     border-radius: 1px;
@@ -117,17 +119,18 @@
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    max-width: 360px;
+    max-width: 290px;
+    margin-bottom: -12px;
   }
 
   .game-card {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 12px 14px;
+    gap: 12px;
+    padding: 11px 14px;
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: 18px;
+    border-radius: 16px;
     text-decoration: none;
     color: var(--text);
     backdrop-filter: blur(4px);
@@ -143,9 +146,9 @@
   .game-card:active { transform: scale(0.98); }
 
   .game-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 12px;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
     overflow: hidden;
     flex-shrink: 0;
   }
