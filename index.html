@@ -30,7 +30,7 @@
     --card-border: rgba(90,68,32,0.12);
   }
 
-  html, body { height: 100%; }
+  html, body { height: 100%; overflow: hidden; }
 
   body {
     background: var(--cream);
@@ -69,30 +69,43 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px 24px 24px;
+    padding: 0 24px 8px;
     text-align: center;
+  }
+
+  .logo {
+    width: clamp(140px, 28vw, 200px);
+    height: clamp(140px, 28vw, 200px);
+    margin-bottom: -6%;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 16px 32px rgba(90,40,10,0.18));
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
   }
 
   .wordmark {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
-    font-size: clamp(72px, 18vw, 110px);
+    font-size: clamp(96px, 24vw, 140px);
     letter-spacing: -1px;
     line-height: 1;
     color: var(--text);
   }
 
   .tagline {
-    margin-top: 10px;
+    margin-top: 8px;
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
-    font-size: clamp(13px, 3vw, 15px);
-    letter-spacing: 0.18em;
+    font-size: clamp(12px, 2.8vw, 14px);
+    letter-spacing: 0.2em;
     color: var(--muted);
   }
 
   .divider {
-    margin: 24px auto;
+    margin: 16px auto;
     width: 40px;
     height: 2px;
     border-radius: 1px;
@@ -102,7 +115,7 @@
   .games {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     width: 100%;
     max-width: 360px;
   }
@@ -110,8 +123,8 @@
   .game-card {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 16px 18px;
+    gap: 14px;
+    padding: 12px 14px;
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 18px;
@@ -130,12 +143,11 @@
   .game-card:active { transform: scale(0.98); }
 
   .game-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 14px;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
     overflow: hidden;
     flex-shrink: 0;
-    background: var(--cream);
   }
 
   .game-icon img {
@@ -154,12 +166,12 @@
     font-size: 15px;
     font-weight: 500;
     color: var(--text);
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
 
   .game-desc {
     font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     color: var(--muted);
     line-height: 1.4;
     white-space: nowrap;
@@ -187,7 +199,7 @@
     position: relative;
     z-index: 1;
     text-align: center;
-    padding: 0 24px 20px;
+    padding: 0 24px 16px;
     flex-shrink: 0;
   }
 
@@ -196,14 +208,13 @@
     color: var(--muted);
   }
 
-  .footer-links a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
-
   main > * { animation: rise 0.55s ease both; }
-  .wordmark   { animation-delay: 0s; }
-  .tagline    { animation-delay: 0.07s; }
-  .divider    { animation-delay: 0.12s; }
-  .games      { animation-delay: 0.18s; }
-  footer      { animation: rise 0.55s ease both; animation-delay: 0.24s; }
+  .logo       { animation-delay: 0s; }
+  .wordmark   { animation-delay: 0.07s; }
+  .tagline    { animation-delay: 0.12s; }
+  .divider    { animation-delay: 0.16s; }
+  .games      { animation-delay: 0.21s; }
+  footer      { animation: rise 0.55s ease both; animation-delay: 0.26s; }
 
   @keyframes rise {
     from { opacity: 0; transform: translateY(16px); }
@@ -216,17 +227,18 @@
 <div class="stripe"></div>
 
 <main>
+  <img src="logo.svg" alt="Topside cube logo" class="logo">
   <h1 class="wordmark">Topside</h1>
-  <p class="tagline">Puzzle Games</p>
+  <p class="tagline">Games</p>
   <div class="divider"></div>
 
   <div class="games">
     <a href="/original" class="game-card">
       <div class="game-icon">
-        <img src="logo.svg" alt="Topside icon">
+        <img src="og-image.png" alt="Topside: Original icon">
       </div>
       <div class="game-info">
-        <p class="game-name">Topside</p>
+        <p class="game-name">Topside: Original</p>
         <p class="game-desc">The cube logic puzzle</p>
       </div>
       <span class="game-badge">iOS</span>
@@ -234,7 +246,7 @@
 
     <a href="/dicedrop" class="game-card">
       <div class="game-icon">
-        <img src="dicedrop/logo.svg" alt="Topside: Dice Drop icon">
+        <img src="dicedrop/icon.png" alt="Topside: Dice Drop icon">
       </div>
       <div class="game-info">
         <p class="game-name">Topside: Dice Drop</p>
