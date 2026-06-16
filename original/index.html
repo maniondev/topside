@@ -29,7 +29,6 @@
     background-size: auto, 300%;
     background-position: 0 0, top left;
     background-repeat: no-repeat, no-repeat;
-    background-attachment: scroll;
   }
 
   body {
@@ -40,7 +39,6 @@
     font-family: 'DM Sans', sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
   }
 
   .stripe {
@@ -60,7 +58,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 20px 24px 0;
+    padding: 20px 24px 32px;
     text-align: center;
   }
 
@@ -116,7 +114,6 @@
 
   .buttons {
     margin-top: 28px;
-    margin-bottom: -12px;
     display: flex;
     flex-direction: column;
     gap: 11px;
@@ -241,14 +238,5 @@
   <p class="footer-links">&copy; 2026 Topside &nbsp;&middot;&nbsp; <a href="https://sites.google.com/view/topsideapp/home">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="https://topside.games">Topside Games</a></p>
 </footer>
 
-<script>
-(function(){
-  var el = document.documentElement;
-  window.addEventListener('scroll', function(){
-    var y = window.scrollY || 0;
-    el.style.backgroundPosition = '0px ' + y + 'px, 0px ' + y + 'px';
-  }, {passive: true});
-})();
-</script>
 </body>
 </html>
