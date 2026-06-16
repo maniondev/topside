@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Topside: Dice Drop — The Dice Puzzle</title>
 <meta name="description" content="Topside: Dice Drop is the dice puzzle that rewards clever thinking and sharp planning.">
 <link rel="icon" type="image/svg+xml" href="logo.svg">
@@ -21,27 +21,23 @@
     --muted:  #7A6050;
   }
 
+  html {
+    background-color: var(--cream);
+    background-image:
+      linear-gradient(rgba(240,234,224,0.75), rgba(240,234,224,0.75)),
+      url('bg.svg');
+    background-size: auto, 300%;
+    background-position: 0 0, top left;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed, fixed;
+  }
+
   body {
-    background: var(--cream);
     color: var(--text);
     font-family: 'DM Sans', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-  }
-
-  .page-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('bg.svg');
-    background-size: 300%;
-    background-position: top left;
-    opacity: 0.25;
-    pointer-events: none;
-    z-index: 0;
   }
 
   .stripe {
@@ -215,7 +211,6 @@
 </head>
 <body>
 
-<div class="page-bg" aria-hidden="true"></div>
 <div class="stripe"></div>
 
 <main>
