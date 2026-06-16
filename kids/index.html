@@ -22,8 +22,6 @@
   }
 
   html {
-    height: 100%;
-    overflow: hidden;
     background-color: var(--cream);
     background-image:
       linear-gradient(rgba(240,234,224,0.75), rgba(240,234,224,0.75)),
@@ -31,10 +29,11 @@
     background-size: auto, 300%;
     background-position: 0 0, top left;
     background-repeat: no-repeat, no-repeat;
+    background-attachment: scroll;
   }
 
   body {
-    height: 100%;
+    min-height: 100dvh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     color: var(--text);
@@ -241,5 +240,14 @@
   <p class="footer-links">&copy; 2026 Topside &nbsp;&middot;&nbsp; <a href="https://topside.games">Topside Games</a></p>
 </footer>
 
+<script>
+(function(){
+  var el = document.documentElement;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || 0;
+    el.style.backgroundPosition = '0px ' + y + 'px, 0px ' + y + 'px';
+  }, {passive: true});
+})();
+</script>
 </body>
 </html>
