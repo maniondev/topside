@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Topside: Kids — Coming Soon</title>
 <meta name="description" content="Topside: Kids — 8 dice-themed mini-games covering early numeracy and literacy for ages 3–7. Coming soon for iOS and Android.">
 <link rel="icon" type="image/png" href="icon.png">
@@ -21,30 +21,28 @@
     --muted:  #7A6050;
   }
 
-  body {
+  html {
     background: var(--cream);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    position: relative;
   }
 
-  body::before {
+  html::before {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    height: 100dvh;
+    inset: 0;
     background-image: url('bg.svg');
     background-size: cover;
     background-position: center;
     opacity: 0.5;
     pointer-events: none;
     z-index: 0;
+  }
+
+  body {
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 
   .stripe {
