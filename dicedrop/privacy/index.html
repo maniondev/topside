@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Topside: Dice Drop</title>
+<meta name="description" content="Privacy policy for Topside: Dice Drop, the drop and merge puzzle game.">
+<link rel="icon" type="image/svg+xml" href="../../logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream:  #F0EAE0;
+    --red:    #E5384A;
+    --orange: #EA862A;
+    --gold:   #DFB945;
+    --text:   #1E1410;
+    --muted:  #7A6050;
+  }
+
+  html {
+    background-color: var(--cream);
+    background-image:
+      linear-gradient(rgba(240,234,224,0.50), rgba(240,234,224,0.50)),
+      url('../bg.svg');
+    background-size: auto, 300%;
+    background-position: 0 0, top left;
+    background-repeat: no-repeat, repeat-y;
+  }
+
+  body {
+    min-height: 100dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stripe {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--red) 0%, var(--orange) 50%, var(--gold) 100%);
+    flex-shrink: 0;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px 0;
+    max-width: 680px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  header a {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: #4A3020;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+
+  header a:hover { opacity: 0.75; }
+
+  .divider-line {
+    width: 1px;
+    height: 22px;
+    background: var(--muted);
+    opacity: 0.3;
+  }
+
+  header span {
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  main {
+    flex: 1;
+    max-width: 680px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 32px 24px 48px;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(36px, 8vw, 52px);
+    color: #4A3020;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .updated {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 36px;
+  }
+
+  .divider {
+    width: 40px;
+    height: 2px;
+    border-radius: 1px;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+    margin-bottom: 36px;
+  }
+
+  h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 36px;
+    margin-bottom: 10px;
+  }
+
+  h2:first-of-type { margin-top: 0; }
+
+  p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #3A2818;
+    margin-bottom: 14px;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  ul {
+    margin: 0 0 14px 0;
+    padding-left: 20px;
+  }
+
+  ul li {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #3A2818;
+    margin-bottom: 4px;
+  }
+
+  a {
+    color: var(--red);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 0 24px calc(18px + env(safe-area-inset-bottom, 0px));
+    flex-shrink: 0;
+  }
+
+  .footer-links {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .footer-links a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<div class="stripe"></div>
+
+<header>
+  <a href="../">Topside</a>
+  <div class="divider-line"></div>
+  <span>Dice Drop</span>
+</header>
+
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: June 2026</p>
+  <div class="divider"></div>
+
+  <h2>Overview</h2>
+  <p>Topside: Dice Drop is a puzzle game developed by Topside Games (John Manion). We are committed to protecting your privacy. This policy explains what data is collected, by whom, and how it is used.</p>
+
+  <h2>Data Stored on Your Device</h2>
+  <p>The following is stored locally on your device only and never transmitted to us directly:</p>
+  <ul>
+    <li>Your game progress and high scores</li>
+    <li>Your premium upgrade status</li>
+    <li>Your app preferences and settings</li>
+  </ul>
+
+  <h2>Leaderboard</h2>
+  <p>Topside: Dice Drop includes an optional global leaderboard powered by <strong>Supabase</strong>. If you choose to submit a score, the following information is sent to Supabase's servers:</p>
+  <ul>
+    <li>Your chosen display name</li>
+    <li>Your score</li>
+    <li>A timestamp</li>
+  </ul>
+  <p>No account, email address, or other personal information is required. You are not required to submit a score — the leaderboard is entirely opt-in. Scores submitted to the leaderboard are publicly visible. See <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase's privacy policy</a> for details on how they store and process this data.</p>
+
+  <h2>Third-Party Services</h2>
+  <p><strong>Google AdMob</strong> — The free version of Topside: Dice Drop displays ads served by Google AdMob. AdMob may collect device advertising identifiers (IDFA on iOS, GAID on Android) to serve relevant ads. On iOS, you will be shown Apple's App Tracking Transparency prompt before any tracking occurs. You may decline and ads will still be shown without personalization.</p>
+  <p><strong>RevenueCat</strong> — We use RevenueCat to process and verify in-app purchases. RevenueCat receives a purchase receipt but does not receive your payment information. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's privacy policy</a> for details.</p>
+
+  <h2>Your Choices</h2>
+  <ul>
+    <li>Opt out of personalized ads via your device's privacy or advertising settings (iOS: Settings → Privacy → Tracking; Android: Google Settings → Ads)</li>
+    <li>Purchase the premium upgrade to remove ads entirely</li>
+    <li>Skip the leaderboard entirely — score submission is always opt-in</li>
+    <li>Request deletion of any leaderboard entry or device-associated data by contacting us</li>
+  </ul>
+
+  <h2>EEA &amp; UK Users</h2>
+  <p>If you are located in the European Economic Area or the United Kingdom, you may have additional rights under GDPR, including the right to access, correct, or delete data held about you, and the right to object to or restrict certain processing. For leaderboard data, contact us and we will remove your entry upon request. For ad-related data, rights apply primarily to our third-party processors (Google AdMob, RevenueCat). Contact us at <a href="mailto:contact@topside.games">contact@topside.games</a> to exercise any rights or to be directed to the appropriate processor.</p>
+
+  <h2>Children</h2>
+  <p>Topside: Dice Drop is intended for users aged 13 and older. We do not knowingly collect personal information from children under 13. The leaderboard requires a display name — parents should supervise this interaction for younger users.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this policy from time to time. Any changes will be posted at this URL with an updated date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions? Reach us at <a href="mailto:contact@topside.games">contact@topside.games</a>.</p>
+</main>
+
+<footer>
+  <p class="footer-links">&copy; 2026 Topside &nbsp;&middot;&nbsp; <a href="../">Dice Drop</a> &nbsp;&middot;&nbsp; <a href="https://topside.games">Topside Games</a></p>
+</footer>
+
+</body>
+</html>
