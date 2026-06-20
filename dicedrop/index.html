@@ -198,6 +198,19 @@
 
   .footer-links a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
 
+  .back-link {
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    opacity: 0.75;
+    z-index: 2;
+  }
+  .back-link:hover { opacity: 1; }
+
   main > * { animation: rise 0.55s ease both; }
   .eyebrow   { animation-delay: 0s; }
   .logo      { animation-delay: 0.04s; }
@@ -217,6 +230,7 @@
 <body>
 
 <div class="stripe"></div>
+<a href="/" class="back-link">← All Games</a>
 
 <main>
   <img src="logo.svg" alt="Topside: Dice Drop logo" class="logo">
