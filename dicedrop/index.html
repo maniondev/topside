@@ -126,6 +126,15 @@
     max-width: 400px;
   }
 
+  .gameplay-video {
+    margin-top: 24px;
+    width: 100%;
+    max-width: 240px;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(30,20,10,0.18);
+    display: block;
+  }
+
   .buttons {
     margin-top: 28px;
     display: flex;
@@ -217,8 +226,9 @@
   .wordmark  { animation-delay: 0.07s; }
   .subtitle  { animation-delay: 0.12s; }
   .divider   { animation-delay: 0.17s; }
-  .desc      { animation-delay: 0.22s; }
-  .buttons   { animation-delay: 0.28s; }
+  .desc           { animation-delay: 0.22s; }
+  .buttons        { animation-delay: 0.28s; }
+  .gameplay-video { animation-delay: 0.34s; }
   footer     { animation: rise 0.55s ease both; animation-delay: 0.32s; }
 
   @keyframes rise {
@@ -261,6 +271,10 @@
       </span>
     </a>
   </div>
+
+  <video class="gameplay-video" autoplay muted loop playsinline>
+    <source src="gameplay.mp4" type="video/mp4">
+  </video>
 </main>
 
 <footer>
@@ -268,5 +282,8 @@
   <p class="footer-links">&copy; 2026 John Manion &nbsp;&middot;&nbsp; <a href="privacy/">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="/contact">Contact</a> &nbsp;&middot;&nbsp; <a href="https://topside.games">All Games</a></p>
 </footer>
 
+<script>
+  document.querySelector('.gameplay-video').play().catch(() => {});
+</script>
 </body>
 </html>
