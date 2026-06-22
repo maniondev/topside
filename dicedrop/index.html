@@ -272,7 +272,7 @@
     </a>
   </div>
 
-  <video class="gameplay-video" autoplay muted loop playsinline>
+  <video class="gameplay-video" autoplay muted loop playsinline preload="auto">
     <source src="gameplay.mp4" type="video/mp4">
   </video>
 </main>
@@ -283,7 +283,11 @@
 </footer>
 
 <script>
-  document.querySelector('.gameplay-video').play().catch(() => {});
+  window.addEventListener('load', function() {
+    var v = document.querySelector('.gameplay-video');
+    v.muted = true;
+    v.play().catch(function() {});
+  });
 </script>
 </body>
 </html>
