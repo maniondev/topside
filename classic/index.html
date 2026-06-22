@@ -125,7 +125,7 @@
   .gameplay-video {
     margin-top: 24px;
     width: 100%;
-    max-width: 220px;
+    max-width: 320px;
     border-radius: 20px;
     box-shadow: 0 12px 40px rgba(30,20,10,0.18);
     display: block;
@@ -276,5 +276,8 @@
   <p class="footer-links">&copy; 2026 John Manion &nbsp;&middot;&nbsp; <a href="privacy/">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="/contact">Contact</a> &nbsp;&middot;&nbsp; <a href="https://topside.games">Topside Games</a></p>
 </footer>
 
+<script>
+  document.querySelector('.gameplay-video').play().catch(() => {});
+</script>
 </body>
 </html>
