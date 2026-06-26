@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Topside: Dice Drop</title>
+<meta name="description" content="Terms of service for Topside: Dice Drop, the drop and merge puzzle game.">
+<link rel="icon" type="image/svg+xml" href="../../logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream:  #F0EAE0;
+    --red:    #E5384A;
+    --orange: #EA862A;
+    --gold:   #DFB945;
+    --text:   #1E1410;
+    --muted:  #7A6050;
+  }
+
+  html {
+    background-color: var(--cream);
+    background-image:
+      linear-gradient(rgba(240,234,224,0.60), rgba(240,234,224,0.60)),
+      url('../bg.svg');
+    background-size: auto, 900%;
+    background-position: 0 0, top left;
+    background-repeat: no-repeat, repeat-y;
+  }
+
+  body {
+    min-height: 100dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stripe {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--red) 0%, var(--orange) 50%, var(--gold) 100%);
+    flex-shrink: 0;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px 0;
+    max-width: 680px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  header a {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: #4A3020;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+
+  header a:hover { opacity: 0.75; }
+
+  .divider-line {
+    width: 1px;
+    height: 22px;
+    background: var(--muted);
+    opacity: 0.3;
+  }
+
+  header span {
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  main {
+    flex: 1;
+    max-width: 680px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 32px 24px 48px;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(36px, 8vw, 52px);
+    color: #4A3020;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .updated {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 36px;
+  }
+
+  .divider {
+    width: 40px;
+    height: 2px;
+    border-radius: 1px;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+    margin-bottom: 36px;
+  }
+
+  h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 36px;
+    margin-bottom: 10px;
+  }
+
+  h2:first-of-type { margin-top: 0; }
+
+  p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #3A2818;
+    margin-bottom: 14px;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  ul {
+    margin: 0 0 14px 0;
+    padding-left: 20px;
+  }
+
+  ul li {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #3A2818;
+    margin-bottom: 4px;
+  }
+
+  a {
+    color: var(--red);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 0 24px calc(18px + env(safe-area-inset-bottom, 0px));
+    flex-shrink: 0;
+  }
+
+  .footer-links {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .footer-links a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<div class="stripe"></div>
+
+<header>
+  <a href="../">Topside</a>
+  <div class="divider-line"></div>
+  <span>Dice Drop</span>
+</header>
+
+<main>
+  <h1>Terms of Service</h1>
+  <p class="updated">Last updated: June 25, 2026</p>
+  <div class="divider"></div>
+
+  <h2>1. Acceptance</h2>
+  <p>By downloading or playing Topside: Dice Drop ("the App"), you agree to these terms. If you don't agree, don't use the App.</p>
+
+  <h2>2. License</h2>
+  <p>We grant you a personal, non-transferable license to use the App for entertainment. You may not copy, modify, reverse-engineer, or redistribute any part of it.</p>
+
+  <h2>3. Fair Play</h2>
+  <p>Score manipulation, cheating, exploiting bugs, or interfering with the leaderboard is prohibited and may result in removal from the leaderboard or being banned from the App.</p>
+
+  <h2>4. In-App Purchases</h2>
+  <p>Purchases are processed through Apple or Google. All sales are final except where required by law. Restoring purchases is available through the App.</p>
+
+  <h2>5. Ads</h2>
+  <p>The free version displays ads provided by Google AdMob. Premium users see no ads.</p>
+
+  <h2>6. Your Content</h2>
+  <p>The App assigns you an anonymous display name. You don't provide personal content, and we don't claim ownership of anything you create.</p>
+
+  <h2>7. Disclaimer</h2>
+  <p>The App is provided "as is" without warranties of any kind. We don't guarantee it will be error-free or always available.</p>
+
+  <h2>8. Limitation of Liability</h2>
+  <p>To the maximum extent permitted by law, Topside Games shall not be liable for any indirect, incidental, or consequential damages arising from use of the App.</p>
+
+  <h2>9. Changes</h2>
+  <p>We may update these terms at any time. Continued use of the App after changes constitutes acceptance.</p>
+
+  <h2>10. Age</h2>
+  <p>You must be at least 13 years old to use this App.</p>
+
+  <h2>11. Governing Law</h2>
+  <p>These terms are governed by the laws of the State of Hawaii, United States.</p>
+
+  <h2>12. Contact</h2>
+  <p>Questions? Reach us at <a href="mailto:contact@topside.games">contact@topside.games</a>.</p>
+</main>
+
+<footer>
+  <p class="footer-links">&copy; 2026 John Manion &nbsp;&middot;&nbsp; <a href="../">Dice Drop</a> &nbsp;&middot;&nbsp; <a href="/contact">Contact</a> &nbsp;&middot;&nbsp; <a href="https://topside.games">Topside Games</a></p>
+</footer>
+
+</body>
+</html>
