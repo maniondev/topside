@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1C1008">
 <title>Topside: Dice Drop — The Dice Puzzle</title>
 <meta name="description" content="Topside: Dice Drop — Drop and merge dice, chain reactions, climb the leaderboard.">
 <link rel="icon" type="image/svg+xml" href="logo.svg">
@@ -13,22 +14,27 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --cream:  #F0EAE0;
-    --red:    #E5384A;
-    --orange: #EA862A;
-    --gold:   #DFB945;
-    --text:   #1E1410;
-    --muted:  #7A6050;
+    /* Dice Drop game theme (constants/theme.ts → dicedrop) */
+    --bg:          #1C1008;
+    --crimson:     #D94050;
+    --text:        #FFE4C0;
+    --secondary:   #E5AC78;
+    --muted:       #C88E5C;
+    --card:        #2E1A0C;
+    --card-border: #5A3018;
+    --orange:      #EA862A;
+    --gold:        #DFB945;
   }
 
   html {
-    background-color: var(--cream);
+    background-color: var(--bg);
+    /* Hearth glow low-center + faint crimson spill upper-right over a warm
+       dark gradient — mirrors the in-game Dice Drop atmosphere. */
     background-image:
-      linear-gradient(rgba(240,234,224,0.60), rgba(240,234,224,0.60)),
-      url('bg.svg');
-    background-size: auto, 900%;
-    background-position: 0 0, top left;
-    background-repeat: no-repeat, no-repeat;
+      radial-gradient(130% 90% at 50% 108%, rgba(122,58,32,0.55) 0%, rgba(122,58,32,0) 55%),
+      radial-gradient(85% 55% at 86% 12%, rgba(217,64,80,0.12) 0%, rgba(217,64,80,0) 60%),
+      linear-gradient(#160D06, #1C1008 45%, #28170B);
+    background-attachment: fixed;
   }
 
   body {
@@ -44,7 +50,7 @@
   .stripe {
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, var(--red) 0%, var(--orange) 50%, var(--gold) 100%);
+    background: linear-gradient(90deg, var(--crimson) 0%, var(--orange) 50%, var(--gold) 100%);
     flex-shrink: 0;
     position: relative;
     z-index: 1;
@@ -97,7 +103,8 @@
     font-size: clamp(72px, 18vw, 112px);
     letter-spacing: -2px;
     line-height: 1;
-    color: #4A3020;
+    color: var(--crimson);
+    text-shadow: 0 2px 34px rgba(217,64,80,0.35);
   }
 
   .subtitle {
@@ -106,7 +113,7 @@
     font-weight: 400;
     font-size: clamp(15px, 3.5vw, 18px);
     letter-spacing: 0.2em;
-    color: var(--muted);
+    color: var(--secondary);
   }
 
   .divider {
@@ -114,7 +121,7 @@
     width: 40px;
     height: 2px;
     border-radius: 1px;
-    background: linear-gradient(90deg, var(--red), var(--gold));
+    background: linear-gradient(90deg, var(--crimson), var(--gold));
   }
 
   .desc {
@@ -122,7 +129,7 @@
     font-weight: 400;
     font-size: clamp(14px, 3vw, 16px);
     line-height: 1.7;
-    color: var(--muted);
+    color: var(--secondary);
     max-width: 400px;
   }
 
@@ -131,7 +138,7 @@
     width: 100%;
     max-width: 240px;
     border-radius: 20px;
-    box-shadow: 0 12px 40px rgba(30,20,10,0.18);
+    box-shadow: 0 14px 44px rgba(0,0,0,0.55), 0 0 0 1px rgba(90,48,24,0.55);
     display: block;
   }
 
@@ -165,19 +172,20 @@
 
   .btn svg { flex-shrink: 0; }
 
+  /* iOS is the live store, so it's the prominent crimson CTA. */
   .btn-ios {
-    background: #4A3020;
-    color: var(--cream);
-    box-shadow: 0 4px 16px rgba(30,20,10,0.20);
-  }
-  .btn-ios:hover { box-shadow: 0 8px 24px rgba(30,20,10,0.28); }
-
-  .btn-android {
-    background: var(--red);
+    background: var(--crimson);
     color: #fff;
-    box-shadow: 0 4px 16px rgba(229,56,74,0.28);
+    box-shadow: 0 4px 18px rgba(217,64,80,0.35);
   }
-  .btn-android:hover { box-shadow: 0 8px 24px rgba(229,56,74,0.38); }
+  .btn-ios:hover { box-shadow: 0 8px 26px rgba(217,64,80,0.50); }
+
+  /* Android is "coming soon" (disabled inline) — a quiet outlined chip. */
+  .btn-android {
+    background: var(--card);
+    color: var(--secondary);
+    border: 1px solid var(--card-border);
+  }
 
   .btn-label { display: flex; flex-direction: column; text-align: left; }
   .btn-label-sub  { font-size: 10px; font-weight: 400; opacity: 0.7; letter-spacing: 0.05em; line-height: 1; }
