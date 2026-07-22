@@ -66,6 +66,16 @@ const EXTRA_CSS = `
   .canonical a { color:var(--red); }
 `;
 
+// Strip any previously-injected switcher, CSS, and hreflang so the generator
+// is idempotent (re-running yields identical output) and self-heals pages that
+// accumulated duplicates from earlier runs.
+function clean(html) {
+  html = html.replace(/\s*<nav class="langbar"[\s\S]*?<\/nav>/g, '');
+  html = html.replace(/\n  \.langbar \{[\s\S]*?\.canonical a \{ color:var\(--red\); \}\n/g, '\n');
+  html = html.replace(/\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*">/g, '');
+  return html;
+}
+
 function switcher(slug, cur) {
   const items = LANGS.map(l => {
     const href = l.code === 'en' ? `/dicedrop/${slug}/` : `/dicedrop/${slug}/${l.code}/`;
@@ -86,7 +96,8 @@ function hreflangBlock(slug) {
 }
 
 function generate(slug) {
-  const tmpl = fs.readFileSync(path.join(ROOT, slug, 'index.html'), 'utf8');
+  // Clean the template first so prior injections never stack (idempotent).
+  const tmpl = clean(fs.readFileSync(path.join(ROOT, slug, 'index.html'), 'utf8'));
 
   for (const l of LANGS) {
     let html = tmpl;
@@ -107,6 +118,11 @@ function generate(slug) {
     html = html.replace(TITLE[slug].en, TITLE[slug][l.code]);
     html = html.replace(DESC[slug].en, DESC[slug][l.code]);
     html = html.replace(`>${CONTACT_WORD.en}</a>`, `>${CONTACT_WORD[l.code]}</a>`);
+    // Localized pages live one folder deeper than English, so the English
+    // relative asset paths (../bg.svg, ../../logo.svg) would break. Use
+    // root-absolute paths that resolve at any depth.
+    html = html.replace("url('../bg.svg')", "url('/dicedrop/bg.svg')");
+    html = html.replace('href="../../logo.svg"', 'href="/logo.svg"');
 
     const note = `<div class="canonical">${CANONICAL[l.code].replace('LINK', `/dicedrop/${slug}/`)}</div>`;
     const main =
