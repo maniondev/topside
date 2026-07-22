@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1C1008">
 <title>Termini di Servizio — Topside: Dice Drop</title>
 <meta name="description" content="Termini di servizio di Topside: Dice Drop, il gioco di puzzle in cui far cadere e combinare.">
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
@@ -13,29 +14,35 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --cream:  #F0EAE0;
-    --red:    #E5384A;
-    --orange: #EA862A;
-    --gold:   #DFB945;
-    --text:   #1E1410;
-    --muted:  #7A6050;
+    /* Dice Drop game theme (constants/theme.ts -> dicedrop) */
+    --bg:          #1C1008;
+    --crimson:     #D94050;
+    --text:        #FFE4C0;
+    --body:        #EAD4B6;
+    --secondary:   #E5AC78;
+    --muted:       #C88E5C;
+    --card:        #2E1A0C;
+    --card-border: #5A3018;
+    --orange:      #EA862A;
+    --gold:        #DFB945;
   }
 
   html {
-    background-color: var(--cream);
+    background-color: var(--bg);
+    /* Hearth glow low-center + faint crimson spill upper-right over a warm
+       dark gradient — mirrors the in-game Dice Drop atmosphere. */
     background-image:
-      linear-gradient(rgba(240,234,224,0.60), rgba(240,234,224,0.60)),
-      url('/dicedrop/bg.svg');
-    background-size: auto, 900%;
-    background-position: 0 0, top left;
-    background-repeat: no-repeat, repeat-y;
+      radial-gradient(120% 70% at 50% 100%, rgba(122,58,32,0.50) 0%, rgba(122,58,32,0) 55%),
+      radial-gradient(80% 45% at 88% 3%, rgba(217,64,80,0.10) 0%, rgba(217,64,80,0) 55%),
+      linear-gradient(#160D06, #1C1008 40%, #28170B);
+    background-attachment: fixed;
   }
 
   body {
     min-height: 100dvh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    color: var(--text);
+    color: var(--body);
     font-family: 'DM Sans', sans-serif;
     display: flex;
     flex-direction: column;
@@ -44,7 +51,7 @@
   .stripe {
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, var(--red) 0%, var(--orange) 50%, var(--gold) 100%);
+    background: linear-gradient(90deg, var(--crimson) 0%, var(--orange) 50%, var(--gold) 100%);
     flex-shrink: 0;
   }
 
@@ -62,7 +69,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     font-size: 28px;
-    color: #4A3020;
+    color: var(--text);
     text-decoration: none;
     letter-spacing: -0.5px;
   }
@@ -94,9 +101,10 @@
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     font-size: clamp(36px, 8vw, 52px);
-    color: #4A3020;
+    color: var(--crimson);
     line-height: 1.1;
     margin-bottom: 8px;
+    text-shadow: 0 2px 30px rgba(217,64,80,0.30);
   }
 
   .updated {
@@ -109,7 +117,7 @@
     width: 40px;
     height: 2px;
     border-radius: 1px;
-    background: linear-gradient(90deg, var(--red), var(--gold));
+    background: linear-gradient(90deg, var(--crimson), var(--gold));
     margin-bottom: 36px;
   }
 
@@ -119,7 +127,7 @@
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--secondary);
     margin-top: 36px;
     margin-bottom: 10px;
   }
@@ -129,7 +137,7 @@
   p {
     font-size: 15px;
     line-height: 1.75;
-    color: #3A2818;
+    color: var(--body);
     margin-bottom: 14px;
   }
 
@@ -143,12 +151,14 @@
   ul li {
     font-size: 15px;
     line-height: 1.75;
-    color: #3A2818;
+    color: var(--body);
     margin-bottom: 4px;
   }
 
+  strong { color: var(--text); font-weight: 600; }
+
   a {
-    color: var(--red);
+    color: var(--crimson);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
@@ -169,15 +179,12 @@
 
   .footer-links a { color: var(--muted); }
 
-
-
-
   .langbar { display:flex; flex-wrap:wrap; gap:4px 12px; font-size:12px; margin-bottom:22px; }
   .langbar a { color:var(--muted); text-decoration:none; }
-  .langbar a:hover { color:var(--red); text-decoration:underline; }
+  .langbar a:hover { color:var(--crimson); text-decoration:underline; }
   .langbar .active { color:var(--text); font-weight:500; }
-  .canonical { font-size:12.5px; line-height:1.5; color:var(--muted); background:rgba(122,96,80,0.08); border-radius:8px; padding:11px 13px; margin-bottom:30px; }
-  .canonical a { color:var(--red); }
+  .canonical { font-size:12.5px; line-height:1.5; color:var(--secondary); background:rgba(90,48,24,0.28); border:1px solid var(--card-border); border-radius:8px; padding:11px 13px; margin-bottom:30px; }
+  .canonical a { color:var(--crimson); }
 </style>
 <link rel="alternate" hreflang="en" href="https://topside.games/dicedrop/tos/">
 <link rel="alternate" hreflang="es" href="https://topside.games/dicedrop/tos/es/">

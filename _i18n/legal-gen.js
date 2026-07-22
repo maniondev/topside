@@ -60,10 +60,10 @@ const BODY = require('./legal-body.js');
 const EXTRA_CSS = `
   .langbar { display:flex; flex-wrap:wrap; gap:4px 12px; font-size:12px; margin-bottom:22px; }
   .langbar a { color:var(--muted); text-decoration:none; }
-  .langbar a:hover { color:var(--red); text-decoration:underline; }
+  .langbar a:hover { color:var(--crimson); text-decoration:underline; }
   .langbar .active { color:var(--text); font-weight:500; }
-  .canonical { font-size:12.5px; line-height:1.5; color:var(--muted); background:rgba(122,96,80,0.08); border-radius:8px; padding:11px 13px; margin-bottom:30px; }
-  .canonical a { color:var(--red); }
+  .canonical { font-size:12.5px; line-height:1.5; color:var(--secondary); background:rgba(90,48,24,0.28); border:1px solid var(--card-border); border-radius:8px; padding:11px 13px; margin-bottom:30px; }
+  .canonical a { color:var(--crimson); }
 `;
 
 // Strip any previously-injected switcher, CSS, and hreflang so the generator
@@ -71,7 +71,7 @@ const EXTRA_CSS = `
 // accumulated duplicates from earlier runs.
 function clean(html) {
   html = html.replace(/\s*<nav class="langbar"[\s\S]*?<\/nav>/g, '');
-  html = html.replace(/\n  \.langbar \{[\s\S]*?\.canonical a \{ color:var\(--red\); \}\n/g, '\n');
+  html = html.replace(/\n  \.langbar \{[\s\S]*?\.canonical a \{[^}]*\}\n/g, '\n');
   html = html.replace(/\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*">/g, '');
   return html;
 }
