@@ -4,334 +4,192 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Topside Games</title>
-<meta name="description" content="Topside Games — Independent mobile games for iOS and Android.">
+<meta name="description" content="Topside makes small games for iPhone and Android — dice puzzles and logic games you can pick up in a minute.">
 <meta property="og:title" content="Topside Games">
-<meta property="og:description" content="Independent mobile games for iOS and Android.">
+<meta property="og:description" content="Dice puzzles and logic games for iPhone and Android.">
 <meta property="og:image" content="https://topside.games/og-image.png">
 <meta property="og:url" content="https://topside.games">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://topside.games/og-image.png">
-<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="canonical" href="https://topside.games/">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="apple-touch-icon" href="/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --cream:  #F0EAE0;
-    --red:    #E5384A;
-    --orange: #EA862A;
-    --gold:   #DFB945;
-    --text:   #1E1410;
-    --muted:  #7A6050;
-    --card-bg: rgba(255,252,246,0.7);
-    --card-border: rgba(90,68,32,0.12);
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --cream:#F0EAE0; --red:#E5384A; --orange:#EA862A; --gold:#DFB945;
+    --text:#1E1410; --muted:#7A6050; --ink:#4A3020; --line:rgba(90,68,32,0.15);
   }
+  html{background-color:var(--cream);
+    background-image:linear-gradient(rgba(240,234,224,0.68),rgba(240,234,224,0.68)),url('/bg.svg');
+    background-size:auto,240%;background-position:0 0,top left;background-repeat:no-repeat,repeat-y}
+  body{color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:inherit}
+  .stripe{height:5px;background:linear-gradient(90deg,var(--red) 0%,var(--orange) 50%,var(--gold) 100%)}
+  .shell{width:100%;max-width:1180px;margin:0 auto;padding:0 34px}
 
-  html {
-    background-color: var(--cream);
-    background-image:
-      linear-gradient(rgba(240,234,224,0.50), rgba(240,234,224,0.50)),
-      url('bg.svg');
-    background-size: auto, 300%;
-    background-position: 0 0, top left;
-    background-repeat: no-repeat, no-repeat;
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand img{width:36px;height:36px;display:block}
+  .brand span{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:600;color:var(--ink);line-height:1}
+  .brand em{font-style:normal;color:var(--muted)}
+  .nav-links{font-size:14px;color:var(--muted)}
+  .nav-links a:hover{color:var(--text)}
+
+  .hero{padding:70px 0 54px}
+  .hero .kick{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(36px,4.6vw,58px);line-height:1.1;letter-spacing:-0.02em;color:var(--ink);margin-bottom:18px;max-width:21ch}
+  .hero p{font-size:18.5px;color:var(--muted);line-height:1.7;max-width:48ch}
+
+  .stack{display:flex;flex-direction:column;gap:26px;padding-bottom:70px}
+  .poster{position:relative;display:grid;grid-template-columns:1.05fr 0.95fr;gap:40px;align-items:end;
+    border-radius:28px;overflow:hidden;padding:44px 44px 0;min-height:400px;
+    box-shadow:0 16px 46px rgba(90,40,10,0.11)}
+  .poster.dice{background:linear-gradient(150deg,#402313 0%,#24140A 62%,#1C1008 100%)}
+  .poster.classic{background:linear-gradient(150deg,#B8323F 0%,#8A222C 65%,#6E1922 100%)}
+  .poster.roku{background:linear-gradient(150deg,#C07A1E 0%,#8A5214 65%,#663B0E 100%)}
+  .poster.kids{background:linear-gradient(150deg,#1D6B5E 0%,#134A41 65%,#0E3A33 100%)}
+  .poster .copy{padding-bottom:46px;color:#F4EDE2}
+  .card-logo{width:62px;height:62px;border-radius:15px;display:block;margin-bottom:18px;box-shadow:0 8px 22px rgba(0,0,0,0.34)}
+  .poster .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;opacity:.72;margin-bottom:13px}
+  .poster h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.6vw,44px);font-weight:600;line-height:1.06;margin-bottom:12px;color:#fff}
+  .poster p{font-size:16px;line-height:1.72;opacity:.86;max-width:42ch;margin-bottom:24px}
+  .poster .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+  .chip{font-size:12px;padding:6px 12px;border-radius:20px;background:rgba(255,255,255,0.14);color:#fff}
+  .cta{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#16110d;font-size:14.5px;font-weight:500;padding:12px 20px;border-radius:12px}
+  .cta:hover{background:#F0EAE0}
+  .cta.soft{background:rgba(255,255,255,0.16);color:#fff}
+
+  .shot{display:flex;justify-content:center;align-items:flex-end;height:100%}
+  .duo{display:flex;align-items:flex-end;justify-content:center;transform:translateY(18px)}
+  .duo .p{display:block;background:#0e0b08;border-radius:30px;padding:6px;flex:none}
+  .duo .p img{display:block;width:100%;border-radius:25px}
+  .duo .back{width:196px;transform:rotate(-5deg) translateY(-34px);margin-right:-54px;box-shadow:0 18px 44px rgba(0,0,0,0.38);opacity:.97}
+  .duo .front{width:234px;transform:rotate(2deg);position:relative;z-index:2;box-shadow:0 -6px 46px rgba(0,0,0,0.45)}
+
+  .soon{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:14px 0 48px}
+  .soon img{width:128px;height:128px;border-radius:29px;box-shadow:0 18px 46px rgba(0,0,0,0.42)}
+  .soon .soon-label{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;color:#fff;margin:0;opacity:1;max-width:none}
+  .soon .soon-sub{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#fff;margin:0;opacity:.62;max-width:none}
+
+  footer{padding:26px 0 40px;border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+
+  @media(max-width:900px){
+    .poster{grid-template-columns:1fr;padding:36px 30px 0;gap:26px;min-height:0}
+    .poster .copy{padding-bottom:8px}
+    .shell{padding:0 20px}
+    .hero{padding:48px 0 36px}
+    .duo{transform:translateY(14px)}
+    .duo .back{width:168px;margin-right:-46px;transform:rotate(-5deg) translateY(-28px)}
+    .duo .front{width:200px}
   }
-
-  body {
-    min-height: 100dvh;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .stripe {
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, var(--red) 0%, var(--orange) 50%, var(--gold) 100%);
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  main {
-    position: relative;
-    z-index: 1;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 20px 24px 32px;
-    text-align: center;
-  }
-
-  .logo {
-    width: clamp(200px, 38vw, 320px);
-    height: clamp(200px, 38vw, 320px);
-    margin-top: 0;
-    margin-bottom: calc(-9% + 20px);
-    animation: rise 0.55s ease both, float 4s 0.55s ease-in-out infinite;
-    filter: none;
-  }
-
-  @media (max-width: 767px) {
-    main { padding-top: 8px; }
-    .logo { margin-bottom: calc(-14% + 20px); }
-  }
-
-  @media (min-width: 768px) {
-    main { padding-top: 6px; }
-    .logo { margin-bottom: -60px; }
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(-8px); }
-  }
-
-  .wordmark {
-    margin-bottom: 12px;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: clamp(104px, 26vw, 156px);
-    letter-spacing: -1px;
-    line-height: 1;
-    color: #4A3020;
-  }
-
-  .tagline {
-    margin-top: 8px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
-    font-size: clamp(15px, 3.5vw, 18px);
-    letter-spacing: 0.2em;
-    color: var(--muted);
-  }
-
-  .divider {
-    margin: 20px auto;
-    width: 40px;
-    height: 2px;
-    border-radius: 1px;
-    background: linear-gradient(90deg, var(--red), var(--gold));
-  }
-
-  .games {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    max-width: 380px;
-  }
-
-  .game-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 11px 14px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 16px;
-    text-decoration: none;
-    color: var(--text);
-    backdrop-filter: blur(4px);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-  }
-
-  .game-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(90,40,10,0.10);
-    border-color: rgba(90,68,32,0.22);
-  }
-
-  .game-card:active { transform: scale(0.98); }
-
-  .game-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 13px;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-
-  .game-icon img {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-
-  .game-info {
-    flex: 1;
-    text-align: left;
-  }
-
-  .game-name {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 19px;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 2px;
-  }
-
-  .game-desc {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.4;
-    white-space: nowrap;
-  }
-
-  .game-badge {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    background: rgba(90,68,32,0.08);
-    padding: 3px 8px;
-    border-radius: 20px;
-    flex-shrink: 0;
-    text-align: center;
-    line-height: 1.4;
-  }
-
-  .game-badge.coming-soon {
-    color: var(--orange);
-    background: rgba(234,134,42,0.10);
-  }
-
-  .game-badges {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    flex-shrink: 0;
-  }
-
-  .game-badge.ios {
-    color: #4A3020;
-    background: rgba(74,48,32,0.10);
-    padding: 7px 10px;
-  }
-
-  .game-badge.android {
-    color: var(--red);
-    background: rgba(229,56,74,0.10);
-    padding: 7px 10px;
-  }
-
-  footer {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 0 24px calc(16px + env(safe-area-inset-bottom, 0px));
-    flex-shrink: 0;
-  }
-
-  .footer-links {
-    font-size: 11px;
-    color: var(--muted);
-  }
-
-  main > * { animation: rise 0.55s ease both; }
-  .logo       { animation-delay: 0s; }
-  .wordmark   { animation-delay: 0.07s; }
-  .tagline    { animation-delay: 0.12s; }
-  .divider    { animation-delay: 0.16s; }
-  .games      { animation-delay: 0.21s; }
-  footer      { animation: rise 0.55s ease both; animation-delay: 0.26s; }
-
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
+  @media(max-width:520px){
+    .duo .back{width:138px;margin-right:-38px;transform:rotate(-5deg) translateY(-22px)}
+    .duo .front{width:166px}
+    .card-logo{width:54px;height:54px;border-radius:13px;margin-bottom:14px}
+    .soon img{width:104px;height:104px;border-radius:24px}
+    .foot{flex-direction:column;gap:6px;text-align:center}
   }
 </style>
 </head>
 <body>
 
 <div class="stripe"></div>
-
-<main>
-  <img src="logo.svg" alt="Topside cube logo" class="logo">
-  <h1 class="wordmark">Topside<sup style="font-size:0.2em;vertical-align:super;letter-spacing:0;">™</sup></h1>
-  <p class="tagline">Games</p>
-  <div class="divider"></div>
-
-  <div class="games">
-    <a href="/dicedrop" class="game-card">
-      <div class="game-icon">
-        <img src="dicedrop/icon-main.png" alt="Topside: Dice Drop icon">
-      </div>
-      <div class="game-info">
-        <p class="game-name" style="font-family:'Cormorant Garamond',serif;font-weight:600;">Dice Drop</p>
-        <p class="game-desc">A drop and merge game</p>
-      </div>
-      <div class="game-badges">
-        <span class="game-badge android">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-label="Android" style="display:block;">
-            <path d="M5 3v18l15-9z"/>
-          </svg>
-        </span>
-        <span class="game-badge ios">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-label="iOS" style="display:block;">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-          </svg>
-        </span>
-      </div>
-    </a>
-
-    <a href="/classic" class="game-card">
-      <div class="game-icon">
-        <img src="og-image.png" alt="Topside: Classic icon">
-      </div>
-      <div class="game-info">
-        <p class="game-name" style="font-family:'Cormorant Garamond',serif;font-weight:600;">Classic</p>
-        <p class="game-desc">The cube logic puzzle</p>
-      </div>
-      <div class="game-badges">
-        <span class="game-badge android">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-label="Android" style="display:block;">
-            <path d="M5 3v18l15-9z"/>
-          </svg>
-        </span>
-        <span class="game-badge ios">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-label="iOS" style="display:block;">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-          </svg>
-        </span>
-      </div>
-    </a>
-
-    <a href="/rokudoku" class="game-card">
-      <div class="game-icon">
-        <img src="rokudoku/icon.png" alt="Topside: Rokudoku icon">
-      </div>
-      <div class="game-info">
-        <p class="game-name" style="font-family:'Cormorant Garamond',serif;font-weight:600;">Rokudoku</p>
-        <p class="game-desc">A sudoku puzzle, reimagined</p>
-      </div>
-      <span class="game-badge coming-soon">Coming<br>Soon</span>
-    </a>
-
-    <a href="/kids" class="game-card">
-      <div class="game-icon">
-        <img src="kids-icon.png" alt="Topside: Kids icon">
-      </div>
-      <div class="game-info">
-        <p class="game-name" style="font-family:'Cormorant Garamond',serif;font-weight:600;">Kids</p>
-        <p class="game-desc">Games for little learners</p>
-      </div>
-      <span class="game-badge coming-soon">Coming<br>Soon</span>
-    </a>
+<div class="shell">
+  <div class="nav">
+    <a class="brand" href="/"><img src="/logo.svg" alt=""><span>Topside <em>Games</em></span></a>
+    <div class="nav-links"><a href="/contact">Contact</a></div>
   </div>
-</main>
+
+  <header class="hero">
+    <p class="kick">Independent games</p>
+    <h1>Topside makes small games for iPhone and Android.</h1>
+    <p>Dice puzzles and logic games you can pick up in a minute and keep thinking about afterwards.</p>
+  </header>
+
+  <div class="stack">
+
+    <a class="poster dice" href="/dicedrop">
+      <div class="copy">
+        <img class="card-logo" src="/cards/dicedrop.png" alt="Topside: Dice Drop app icon">
+        <p class="eyebrow">iPhone &amp; Android</p>
+        <h2>Dice Drop</h2>
+        <p>Drop and rotate dice pieces. Match adjacent dice of the same value and they merge up. Combine 6s to clear them from the board, chain one merge into the next, and climb the global leaderboard.</p>
+        <div class="chips"><span class="chip">Global leaderboard</span><span class="chip">Chain reactions</span></div>
+        <span class="cta">See the game →</span>
+      </div>
+      <div class="shot">
+        <div class="duo">
+          <span class="p back"><img src="/dicedrop/shots/hero-back.jpg" alt="Dice Drop leaderboard"></span>
+          <span class="p front"><img src="/dicedrop/shots/hero-front.jpg" alt="Dice Drop gameplay"></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="poster classic" href="/classic">
+      <div class="copy">
+        <p class="eyebrow">iPhone &amp; Android</p>
+        <h2>Classic</h2>
+        <p>The cube logic puzzle that's harder than it looks and even harder to put down. Roll a cube across a grid and match each face to its target tile — plan your path, think ahead, find the perfect route.</p>
+        <div class="chips"><span class="chip">Logic puzzle</span><span class="chip">Plan your path</span></div>
+        <span class="cta">See the game →</span>
+      </div>
+      <div class="shot">
+        <div class="soon">
+          <img src="/cards/classic.png" alt="">
+          <p class="soon-label">Out now</p>
+          <p class="soon-sub">iPhone &amp; Android</p>
+        </div>
+      </div>
+    </a>
+
+    <a class="poster roku" href="/rokudoku">
+      <div class="copy">
+        <p class="eyebrow">In development</p>
+        <h2>Rokudoku</h2>
+        <p>A fresh take on sudoku with the Topside twist — six numbers instead of nine, and grid shapes that keep things feeling fresh.</p>
+        <div class="chips"><span class="chip">Six numbers</span><span class="chip">Inventive grids</span></div>
+        <span class="cta soft">Read more →</span>
+      </div>
+      <div class="shot">
+        <div class="soon">
+          <img src="/cards/rokudoku.png" alt="">
+          <p class="soon-label">Coming soon</p>
+          <p class="soon-sub">iPhone &amp; Android</p>
+        </div>
+      </div>
+    </a>
+
+    <a class="poster kids" href="/kids">
+      <div class="copy">
+        <p class="eyebrow">In development</p>
+        <h2>Kids</h2>
+        <p>Eight dice-themed mini-games for ages 3–7. Count pips, sort dice, spell words and more, with Pip the friendly dice as your guide. Free to try, one-time unlock, no ads and no subscription.</p>
+        <div class="chips"><span class="chip">Ages 3–7</span><span class="chip">No ads</span><span class="chip">One-time unlock</span></div>
+        <span class="cta soft">Read more →</span>
+      </div>
+      <div class="shot">
+        <div class="soon">
+          <img src="/cards/kids.png" alt="">
+          <p class="soon-label">Coming soon</p>
+          <p class="soon-sub">iPhone &amp; Android</p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
 
 <footer>
-  <p class="footer-links">&copy; 2026 John Manion &nbsp;&middot;&nbsp; <a href="/contact">Contact</a></p>
+  <div class="shell foot">
+    <span>© 2026 John Manion</span>
+    <span><a href="/contact">Contact</a></span>
+  </div>
 </footer>
 
 </body>
