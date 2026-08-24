@@ -6,7 +6,7 @@
 const SUPA = 'https://supabase.com/privacy';
 const RC = 'https://www.revenuecat.com/privacy';
 const AF = 'https://www.appsflyer.com/legal/services-privacy-policy/';
-const MAIL = 'mailto:contact@topside.games';
+const MAIL = 'mailto:contact@topsidegames.com';
 
 module.exports = {
   privacy: {
@@ -43,7 +43,7 @@ module.exports = {
   </ul>
 
   <h2>Usuarios del EEE y el Reino Unido</h2>
-  <p>Si te encuentras en el Espacio Económico Europeo o el Reino Unido, puedes tener derechos adicionales bajo el RGPD, incluidos el derecho a acceder, corregir o eliminar los datos que se tengan sobre ti, y el derecho a oponerte o restringir determinados tratamientos. Para los datos de la clasificación, ponte en contacto con nosotros y eliminaremos tu entrada a petición. Para los datos relacionados con la publicidad y la atribución, los derechos se aplican principalmente a nuestros encargados de tratamiento externos (Google AdMob, AppsFlyer, RevenueCat). Contáctanos en <a href="${MAIL}">contact@topside.games</a> para ejercer cualquier derecho o para que te dirijamos al encargado correspondiente.</p>
+  <p>Si te encuentras en el Espacio Económico Europeo o el Reino Unido, puedes tener derechos adicionales bajo el RGPD, incluidos el derecho a acceder, corregir o eliminar los datos que se tengan sobre ti, y el derecho a oponerte o restringir determinados tratamientos. Para los datos de la clasificación, ponte en contacto con nosotros y eliminaremos tu entrada a petición. Para los datos relacionados con la publicidad y la atribución, los derechos se aplican principalmente a nuestros encargados de tratamiento externos (Google AdMob, AppsFlyer, RevenueCat). Contáctanos en <a href="${MAIL}">contact@topsidegames.com</a> para ejercer cualquier derecho o para que te dirijamos al encargado correspondiente.</p>
 
   <h2>Menores</h2>
   <p>Topside: Dice Drop está destinado a usuarios de 13 años o más. No recopilamos conscientemente información personal de menores de 13 años. La clasificación requiere un nombre para mostrar; los padres deben supervisar esta interacción en el caso de usuarios más jóvenes.</p>
@@ -52,7 +52,7 @@ module.exports = {
   <p>Podemos actualizar esta política ocasionalmente. Cualquier cambio se publicará en esta URL con una fecha actualizada.</p>
 
   <h2>Contacto</h2>
-  <p>¿Preguntas? Escríbenos a <a href="${MAIL}">contact@topside.games</a>.</p>`,
+  <p>¿Preguntas? Escríbenos a <a href="${MAIL}">contact@topsidegames.com</a>.</p>`,
 
     fr: `<h2>Aperçu</h2>
   <p>Topside: Dice Drop est un jeu de puzzle développé par Topside Games (John Manion). Nous nous engageons à protéger votre vie privée. Cette politique explique quelles données sont collectées, par qui et comment elles sont utilisées.</p>
@@ -87,7 +87,7 @@ module.exports = {
   </ul>
 
   <h2>Utilisateurs de l’EEE et du Royaume-Uni</h2>
-  <p>Si vous résidez dans l’Espace économique européen ou au Royaume-Uni, vous pouvez disposer de droits supplémentaires au titre du RGPD, notamment le droit d’accéder aux données vous concernant, de les corriger ou de les supprimer, ainsi que le droit de vous opposer à certains traitements ou de les limiter. Pour les données de classement, contactez-nous et nous supprimerons votre entrée sur demande. Pour les données liées à la publicité et à l’attribution, les droits s’appliquent principalement à nos sous-traitants tiers (Google AdMob, AppsFlyer, RevenueCat). Contactez-nous à <a href="${MAIL}">contact@topside.games</a> pour exercer vos droits ou pour être orienté vers le sous-traitant approprié.</p>
+  <p>Si vous résidez dans l’Espace économique européen ou au Royaume-Uni, vous pouvez disposer de droits supplémentaires au titre du RGPD, notamment le droit d’accéder aux données vous concernant, de les corriger ou de les supprimer, ainsi que le droit de vous opposer à certains traitements ou de les limiter. Pour les données de classement, contactez-nous et nous supprimerons votre entrée sur demande. Pour les données liées à la publicité et à l’attribution, les droits s’appliquent principalement à nos sous-traitants tiers (Google AdMob, AppsFlyer, RevenueCat). Contactez-nous à <a href="${MAIL}">contact@topsidegames.com</a> pour exercer vos droits ou pour être orienté vers le sous-traitant approprié.</p>
 
   <h2>Enfants</h2>
   <p>Topside: Dice Drop est destiné aux utilisateurs âgés de 13 ans et plus. Nous ne collectons pas sciemment d’informations personnelles auprès d’enfants de moins de 13 ans. Le classement nécessite un nom d’affichage ; les parents doivent superviser cette interaction pour les plus jeunes.</p>
@@ -96,7 +96,7 @@ module.exports = {
   <p>Nous pouvons mettre à jour cette politique de temps à autre. Toute modification sera publiée à cette adresse avec une date actualisée.</p>
 
   <h2>Contact</h2>
-  <p>Des questions ? Écrivez-nous à <a href="${MAIL}">contact@topside.games</a>.</p>`,
+  <p>Des questions ? Écrivez-nous à <a href="${MAIL}">contact@topsidegames.com</a>.</p>`,
 
     de: `<h2>Überblick</h2>
   <p>Topside: Dice Drop ist ein Puzzlespiel, das von Topside Games (John Manion) entwickelt wurde. Wir verpflichten uns, Ihre Privatsphäre zu schützen. Diese Erklärung beschreibt, welche Daten erhoben werden, von wem und wie sie verwendet werden.</p>
@@ -131,7 +131,7 @@ module.exports = {
   </ul>
 
   <h2>Nutzer im EWR und im Vereinigten Königreich</h2>
-  <p>Wenn Sie sich im Europäischen Wirtschaftsraum oder im Vereinigten Königreich befinden, können Ihnen nach der DSGVO zusätzliche Rechte zustehen, darunter das Recht auf Auskunft, Berichtigung oder Löschung der über Sie gespeicherten Daten sowie das Recht, bestimmten Verarbeitungen zu widersprechen oder sie einzuschränken. Für Bestenlisten-Daten kontaktieren Sie uns, und wir entfernen Ihren Eintrag auf Anfrage. Für werbe- und attributionsbezogene Daten gelten die Rechte in erster Linie gegenüber unseren externen Auftragsverarbeitern (Google AdMob, AppsFlyer, RevenueCat). Kontaktieren Sie uns unter <a href="${MAIL}">contact@topside.games</a>, um Rechte auszuüben oder an den zuständigen Verarbeiter verwiesen zu werden.</p>
+  <p>Wenn Sie sich im Europäischen Wirtschaftsraum oder im Vereinigten Königreich befinden, können Ihnen nach der DSGVO zusätzliche Rechte zustehen, darunter das Recht auf Auskunft, Berichtigung oder Löschung der über Sie gespeicherten Daten sowie das Recht, bestimmten Verarbeitungen zu widersprechen oder sie einzuschränken. Für Bestenlisten-Daten kontaktieren Sie uns, und wir entfernen Ihren Eintrag auf Anfrage. Für werbe- und attributionsbezogene Daten gelten die Rechte in erster Linie gegenüber unseren externen Auftragsverarbeitern (Google AdMob, AppsFlyer, RevenueCat). Kontaktieren Sie uns unter <a href="${MAIL}">contact@topsidegames.com</a>, um Rechte auszuüben oder an den zuständigen Verarbeiter verwiesen zu werden.</p>
 
   <h2>Kinder</h2>
   <p>Topside: Dice Drop ist für Nutzer ab 13 Jahren bestimmt. Wir erheben nicht wissentlich personenbezogene Daten von Kindern unter 13 Jahren. Die Bestenliste erfordert einen Anzeigenamen; Eltern sollten diese Interaktion bei jüngeren Nutzern beaufsichtigen.</p>
@@ -140,7 +140,7 @@ module.exports = {
   <p>Wir können diese Erklärung von Zeit zu Zeit aktualisieren. Änderungen werden unter dieser URL mit einem aktualisierten Datum veröffentlicht.</p>
 
   <h2>Kontakt</h2>
-  <p>Fragen? Erreichen Sie uns unter <a href="${MAIL}">contact@topside.games</a>.</p>`,
+  <p>Fragen? Erreichen Sie uns unter <a href="${MAIL}">contact@topsidegames.com</a>.</p>`,
 
     pt: `<h2>Visão geral</h2>
   <p>Topside: Dice Drop é um jogo de puzzle desenvolvido pela Topside Games (John Manion). Temos o compromisso de proteger a sua privacidade. Esta política explica quais dados são coletados, por quem e como são utilizados.</p>
@@ -175,7 +175,7 @@ module.exports = {
   </ul>
 
   <h2>Usuários do EEE e do Reino Unido</h2>
-  <p>Se você estiver no Espaço Econômico Europeu ou no Reino Unido, poderá ter direitos adicionais sob o RGPD, incluindo o direito de acessar, corrigir ou excluir os dados mantidos sobre você, e o direito de se opor a certos tratamentos ou restringi-los. Para dados do placar, entre em contato conosco e removeremos sua entrada mediante solicitação. Para dados relacionados a publicidade e atribuição, os direitos aplicam-se principalmente aos nossos operadores terceirizados (Google AdMob, AppsFlyer, RevenueCat). Contate-nos em <a href="${MAIL}">contact@topside.games</a> para exercer quaisquer direitos ou para ser encaminhado ao operador apropriado.</p>
+  <p>Se você estiver no Espaço Econômico Europeu ou no Reino Unido, poderá ter direitos adicionais sob o RGPD, incluindo o direito de acessar, corrigir ou excluir os dados mantidos sobre você, e o direito de se opor a certos tratamentos ou restringi-los. Para dados do placar, entre em contato conosco e removeremos sua entrada mediante solicitação. Para dados relacionados a publicidade e atribuição, os direitos aplicam-se principalmente aos nossos operadores terceirizados (Google AdMob, AppsFlyer, RevenueCat). Contate-nos em <a href="${MAIL}">contact@topsidegames.com</a> para exercer quaisquer direitos ou para ser encaminhado ao operador apropriado.</p>
 
   <h2>Crianças</h2>
   <p>Topside: Dice Drop destina-se a usuários com 13 anos ou mais. Não coletamos intencionalmente informações pessoais de crianças menores de 13 anos. O placar exige um nome de exibição; os pais devem supervisionar essa interação no caso de usuários mais jovens.</p>
@@ -184,7 +184,7 @@ module.exports = {
   <p>Podemos atualizar esta política periodicamente. Quaisquer alterações serão publicadas neste URL com uma data atualizada.</p>
 
   <h2>Contato</h2>
-  <p>Dúvidas? Fale conosco em <a href="${MAIL}">contact@topside.games</a>.</p>`,
+  <p>Dúvidas? Fale conosco em <a href="${MAIL}">contact@topsidegames.com</a>.</p>`,
 
     it: `<h2>Panoramica</h2>
   <p>Topside: Dice Drop è un gioco di puzzle sviluppato da Topside Games (John Manion). Ci impegniamo a proteggere la tua privacy. La presente informativa spiega quali dati vengono raccolti, da chi e come vengono utilizzati.</p>
@@ -219,7 +219,7 @@ module.exports = {
   </ul>
 
   <h2>Utenti del SEE e del Regno Unito</h2>
-  <p>Se ti trovi nello Spazio Economico Europeo o nel Regno Unito, potresti avere diritti aggiuntivi ai sensi del GDPR, tra cui il diritto di accedere ai dati che ti riguardano, di rettificarli o cancellarli, e il diritto di opporti a determinati trattamenti o di limitarli. Per i dati della classifica, contattaci e rimuoveremo la tua voce su richiesta. Per i dati relativi alla pubblicità e all’attribuzione, i diritti si applicano principalmente ai nostri responsabili del trattamento terzi (Google AdMob, AppsFlyer, RevenueCat). Contattaci all’indirizzo <a href="${MAIL}">contact@topside.games</a> per esercitare qualsiasi diritto o per essere indirizzato al responsabile appropriato.</p>
+  <p>Se ti trovi nello Spazio Economico Europeo o nel Regno Unito, potresti avere diritti aggiuntivi ai sensi del GDPR, tra cui il diritto di accedere ai dati che ti riguardano, di rettificarli o cancellarli, e il diritto di opporti a determinati trattamenti o di limitarli. Per i dati della classifica, contattaci e rimuoveremo la tua voce su richiesta. Per i dati relativi alla pubblicità e all’attribuzione, i diritti si applicano principalmente ai nostri responsabili del trattamento terzi (Google AdMob, AppsFlyer, RevenueCat). Contattaci all’indirizzo <a href="${MAIL}">contact@topsidegames.com</a> per esercitare qualsiasi diritto o per essere indirizzato al responsabile appropriato.</p>
 
   <h2>Minori</h2>
   <p>Topside: Dice Drop è destinato agli utenti di età pari o superiore a 13 anni. Non raccogliamo consapevolmente informazioni personali da minori di 13 anni. La classifica richiede un nome visualizzato; i genitori dovrebbero supervisionare questa interazione per gli utenti più giovani.</p>
@@ -228,7 +228,7 @@ module.exports = {
   <p>Potremmo aggiornare la presente informativa di tanto in tanto. Eventuali modifiche saranno pubblicate a questo URL con una data aggiornata.</p>
 
   <h2>Contatti</h2>
-  <p>Domande? Scrivici a <a href="${MAIL}">contact@topside.games</a>.</p>`,
+  <p>Domande? Scrivici a <a href="${MAIL}">contact@topsidegames.com</a>.</p>`,
 
     ja: `<h2>概要</h2>
   <p>Topside: Dice Drop は Topside Games（John Manion）が開発したパズルゲームです。当社はお客様のプライバシー保護に努めています。本ポリシーでは、どのようなデータが、誰によって収集され、どのように利用されるかを説明します。</p>
@@ -263,7 +263,7 @@ module.exports = {
   </ul>
 
   <h2>EEA および英国のユーザー</h2>
-  <p>欧州経済領域（EEA）または英国に所在する場合、GDPR に基づき、保有されているお客様のデータへのアクセス・訂正・削除を求める権利、特定の処理に対して異議を申し立てまたは制限を求める権利など、追加の権利を有する場合があります。リーダーボードのデータについては、当社にご連絡いただければリクエストに応じて登録を削除します。広告およびアトリビューションに関するデータについては、権利は主に当社の第三者処理者（Google AdMob、AppsFlyer、RevenueCat）に対して適用されます。権利の行使、または適切な処理者へのご案内をご希望の場合は、<a href="${MAIL}">contact@topside.games</a> までご連絡ください。</p>
+  <p>欧州経済領域（EEA）または英国に所在する場合、GDPR に基づき、保有されているお客様のデータへのアクセス・訂正・削除を求める権利、特定の処理に対して異議を申し立てまたは制限を求める権利など、追加の権利を有する場合があります。リーダーボードのデータについては、当社にご連絡いただければリクエストに応じて登録を削除します。広告およびアトリビューションに関するデータについては、権利は主に当社の第三者処理者（Google AdMob、AppsFlyer、RevenueCat）に対して適用されます。権利の行使、または適切な処理者へのご案内をご希望の場合は、<a href="${MAIL}">contact@topsidegames.com</a> までご連絡ください。</p>
 
   <h2>お子様について</h2>
   <p>Topside: Dice Drop は 13 歳以上の方を対象としています。当社は 13 歳未満のお子様から故意に個人情報を収集することはありません。リーダーボードには表示名が必要です。年少の利用者については、保護者の方がこのやり取りを見守ってください。</p>
@@ -272,7 +272,7 @@ module.exports = {
   <p>当社は本ポリシーを随時更新することがあります。変更があった場合は、更新日を記載のうえ本 URL に掲載します。</p>
 
   <h2>お問い合わせ</h2>
-  <p>ご質問は <a href="${MAIL}">contact@topside.games</a> までお寄せください。</p>`,
+  <p>ご質問は <a href="${MAIL}">contact@topsidegames.com</a> までお寄せください。</p>`,
 
     ko: `<h2>개요</h2>
   <p>Topside: Dice Drop은 Topside Games(John Manion)가 개발한 퍼즐 게임입니다. 당사는 이용자의 개인정보 보호를 위해 노력합니다. 본 방침은 어떤 데이터가 누구에 의해 수집되고 어떻게 사용되는지를 설명합니다.</p>
@@ -307,7 +307,7 @@ module.exports = {
   </ul>
 
   <h2>EEA 및 영국 이용자</h2>
-  <p>유럽 경제 지역(EEA) 또는 영국에 거주하는 경우, GDPR에 따라 보유 중인 데이터에 대한 열람·정정·삭제를 요청할 권리와 특정 처리에 반대하거나 이를 제한할 권리 등 추가적인 권리를 가질 수 있습니다. 리더보드 데이터의 경우, 당사에 문의하시면 요청에 따라 등록을 삭제합니다. 광고 및 어트리뷰션 관련 데이터의 경우, 권리는 주로 당사의 제3자 수탁처리자(Google AdMob, AppsFlyer, RevenueCat)에 대해 적용됩니다. 권리를 행사하거나 적절한 처리자를 안내받으려면 <a href="${MAIL}">contact@topside.games</a>로 문의하십시오.</p>
+  <p>유럽 경제 지역(EEA) 또는 영국에 거주하는 경우, GDPR에 따라 보유 중인 데이터에 대한 열람·정정·삭제를 요청할 권리와 특정 처리에 반대하거나 이를 제한할 권리 등 추가적인 권리를 가질 수 있습니다. 리더보드 데이터의 경우, 당사에 문의하시면 요청에 따라 등록을 삭제합니다. 광고 및 어트리뷰션 관련 데이터의 경우, 권리는 주로 당사의 제3자 수탁처리자(Google AdMob, AppsFlyer, RevenueCat)에 대해 적용됩니다. 권리를 행사하거나 적절한 처리자를 안내받으려면 <a href="${MAIL}">contact@topsidegames.com</a>로 문의하십시오.</p>
 
   <h2>아동</h2>
   <p>Topside: Dice Drop은 만 13세 이상의 이용자를 대상으로 합니다. 당사는 만 13세 미만 아동으로부터 고의로 개인정보를 수집하지 않습니다. 리더보드에는 표시 이름이 필요하며, 어린 이용자의 경우 보호자가 이 상호작용을 감독해야 합니다.</p>
@@ -316,7 +316,7 @@ module.exports = {
   <p>당사는 본 방침을 수시로 업데이트할 수 있습니다. 변경 사항은 갱신된 날짜와 함께 본 URL에 게시됩니다.</p>
 
   <h2>문의</h2>
-  <p>문의사항이 있으신가요? <a href="${MAIL}">contact@topside.games</a>로 연락해 주십시오.</p>`,
+  <p>문의사항이 있으신가요? <a href="${MAIL}">contact@topsidegames.com</a>로 연락해 주십시오.</p>`,
 
     zh: `<h2>概述</h2>
   <p>Topside: Dice Drop 是由 Topside Games（John Manion）开发的益智游戏。我们致力于保护您的隐私。本政策说明我们收集哪些数据、由谁收集以及如何使用。</p>
@@ -351,7 +351,7 @@ module.exports = {
   </ul>
 
   <h2>欧洲经济区及英国用户</h2>
-  <p>如果您位于欧洲经济区或英国，您可能根据 GDPR 享有额外权利，包括访问、更正或删除有关您的数据的权利，以及反对或限制某些处理的权利。对于排行榜数据，请联系我们，我们将应您的请求删除您的记录。对于与广告和归因相关的数据，相关权利主要适用于我们的第三方处理者（Google AdMob、AppsFlyer、RevenueCat）。如需行使任何权利或获取相应处理者的联系方式，请通过 <a href="${MAIL}">contact@topside.games</a> 联系我们。</p>
+  <p>如果您位于欧洲经济区或英国，您可能根据 GDPR 享有额外权利，包括访问、更正或删除有关您的数据的权利，以及反对或限制某些处理的权利。对于排行榜数据，请联系我们，我们将应您的请求删除您的记录。对于与广告和归因相关的数据，相关权利主要适用于我们的第三方处理者（Google AdMob、AppsFlyer、RevenueCat）。如需行使任何权利或获取相应处理者的联系方式，请通过 <a href="${MAIL}">contact@topsidegames.com</a> 联系我们。</p>
 
   <h2>儿童</h2>
   <p>Topside: Dice Drop 面向 13 岁及以上的用户。我们不会在明知的情况下收集 13 岁以下儿童的个人信息。排行榜需要一个显示名称；对于年幼的用户，家长应监督这一互动。</p>
@@ -360,7 +360,7 @@ module.exports = {
   <p>我们可能会不时更新本政策。任何变更都将在本网址发布，并附上更新日期。</p>
 
   <h2>联系我们</h2>
-  <p>有疑问？请通过 <a href="${MAIL}">contact@topside.games</a> 联系我们。</p>`,
+  <p>有疑问？请通过 <a href="${MAIL}">contact@topsidegames.com</a> 联系我们。</p>`,
   },
 
   tos: {
@@ -398,7 +398,7 @@ module.exports = {
   <p>Estos términos se rigen por las leyes del Estado de Hawái, Estados Unidos.</p>
 
   <h2>12. Contacto</h2>
-  <p>¿Preguntas? Escríbenos a <a href="${MAIL}">contact@topside.games</a>.</p>`,
+  <p>¿Preguntas? Escríbenos a <a href="${MAIL}">contact@topsidegames.com</a>.</p>`,
 
     fr: `<h2>1. Acceptation</h2>
   <p>En téléchargeant ou en jouant à Topside: Dice Drop (« l’App »), vous acceptez les présentes conditions. Si vous n’êtes pas d’accord, n’utilisez pas l’App.</p>
@@ -434,7 +434,7 @@ module.exports = {
   <p>Les présentes conditions sont régies par les lois de l’État d’Hawaï, États-Unis.</p>
 
   <h2>12. Contact</h2>
-  <p>Des questions ? Écrivez-nous à <a href="${MAIL}">contact@topside.games</a>.</p>`,
+  <p>Des questions ? Écrivez-nous à <a href="${MAIL}">contact@topsidegames.com</a>.</p>`,
 
     de: `<h2>1. Annahme</h2>
   <p>Indem Sie Topside: Dice Drop („die App") herunterladen oder spielen, stimmen Sie diesen Bedingungen zu. Wenn Sie nicht einverstanden sind, nutzen Sie die App nicht.</p>
@@ -470,7 +470,7 @@ module.exports = {
   <p>Diese Bedingungen unterliegen den Gesetzen des Bundesstaates Hawaii, USA.</p>
 
   <h2>12. Kontakt</h2>
-  <p>Fragen? Erreichen Sie uns unter <a href="${MAIL}">contact@topside.games</a>.</p>`,
+  <p>Fragen? Erreichen Sie uns unter <a href="${MAIL}">contact@topsidegames.com</a>.</p>`,
 
     pt: `<h2>1. Aceitação</h2>
   <p>Ao baixar ou jogar Topside: Dice Drop ("o App"), você concorda com estes termos. Se não concordar, não use o App.</p>
@@ -506,7 +506,7 @@ module.exports = {
   <p>Estes termos são regidos pelas leis do Estado do Havaí, Estados Unidos.</p>
 
   <h2>12. Contato</h2>
-  <p>Dúvidas? Fale conosco em <a href="${MAIL}">contact@topside.games</a>.</p>`,
+  <p>Dúvidas? Fale conosco em <a href="${MAIL}">contact@topsidegames.com</a>.</p>`,
 
     it: `<h2>1. Accettazione</h2>
   <p>Scaricando o giocando a Topside: Dice Drop ("l’App"), accetti i presenti termini. Se non sei d’accordo, non utilizzare l’App.</p>
@@ -542,7 +542,7 @@ module.exports = {
   <p>I presenti termini sono regolati dalle leggi dello Stato delle Hawaii, Stati Uniti.</p>
 
   <h2>12. Contatti</h2>
-  <p>Domande? Scrivici a <a href="${MAIL}">contact@topside.games</a>.</p>`,
+  <p>Domande? Scrivici a <a href="${MAIL}">contact@topsidegames.com</a>.</p>`,
 
     ja: `<h2>1. 同意</h2>
   <p>Topside: Dice Drop（以下「本アプリ」）をダウンロードまたはプレイすることにより、お客様は本規約に同意したものとみなされます。同意されない場合は、本アプリをご利用にならないでください。</p>
@@ -578,7 +578,7 @@ module.exports = {
   <p>本規約は、米国ハワイ州の法律に準拠します。</p>
 
   <h2>12. お問い合わせ</h2>
-  <p>ご質問は <a href="${MAIL}">contact@topside.games</a> までお寄せください。</p>`,
+  <p>ご質問は <a href="${MAIL}">contact@topsidegames.com</a> までお寄せください。</p>`,
 
     ko: `<h2>1. 동의</h2>
   <p>Topside: Dice Drop("본 앱")을 다운로드하거나 플레이함으로써 귀하는 본 약관에 동의하게 됩니다. 동의하지 않는 경우 본 앱을 사용하지 마십시오.</p>
@@ -614,7 +614,7 @@ module.exports = {
   <p>본 약관은 미국 하와이주 법률의 적용을 받습니다.</p>
 
   <h2>12. 문의</h2>
-  <p>문의사항이 있으신가요? <a href="${MAIL}">contact@topside.games</a>로 연락해 주십시오.</p>`,
+  <p>문의사항이 있으신가요? <a href="${MAIL}">contact@topsidegames.com</a>로 연락해 주십시오.</p>`,
 
     zh: `<h2>1. 接受条款</h2>
   <p>下载或游玩 Topside: Dice Drop（“本应用”）即表示您同意本条款。如您不同意，请勿使用本应用。</p>
@@ -650,6 +650,6 @@ module.exports = {
   <p>本条款受美国夏威夷州法律管辖。</p>
 
   <h2>12. 联系我们</h2>
-  <p>有疑问？请通过 <a href="${MAIL}">contact@topside.games</a> 联系我们。</p>`,
+  <p>有疑问？请通过 <a href="${MAIL}">contact@topsidegames.com</a> 联系我们。</p>`,
   },
 };

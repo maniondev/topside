@@ -1,4 +1,4 @@
-// Generates localized privacy + TOS pages for topside.games/dicedrop.
+// Generates localized privacy + TOS pages for topsidegames.com/dicedrop.
 // Uses the live English index.html of each page as the structural template
 // (so CSS/chrome can never drift), swapping in translated <main> content,
 // title/description, <html lang>, a language switcher, a canonical-version
@@ -8,7 +8,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..', 'dicedrop');
-const BASE = 'https://topside.games/dicedrop';
+const BASE = 'https://topsidegames.com/dicedrop';
 
 // slug = URL folder + hreflang tag. English lives at the page root.
 const LANGS = [
