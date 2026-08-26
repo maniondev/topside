@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dice Drop - Dark v2</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#1C1008; --panel:#2A1810; --line:rgba(255,228,192,0.14);
+    --text:#FFE4C0; --muted:#C88E5C; --crimson:#D94050; --orange:#EA862A; --gold:#DFB945;
+  }
+  html{background-color:var(--bg)}
+  body{
+    color:var(--text);
+    background-image:
+      radial-gradient(900px 620px at 78% 6%, rgba(234,134,42,0.20), rgba(234,134,42,0) 62%),
+      radial-gradient(760px 560px at 6% 42%, rgba(217,64,80,0.13), rgba(217,64,80,0) 64%),
+      radial-gradient(1000px 700px at 50% 108%, rgba(223,185,69,0.08), rgba(223,185,69,0) 60%);
+    background-attachment:fixed;background-repeat:no-repeat;font-family:'DM Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:inherit}
+  .stripe{height:4px;background:linear-gradient(90deg,var(--crimson),var(--orange) 50%,var(--gold))}
+  .shell{width:100%;max-width:1120px;margin:0 auto;padding:0 32px}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(28,16,8,0.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .nav-brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500}
+  .nav-brand img{width:34px;height:34px;border-radius:9px;display:block}
+  .nav-right{display:flex;align-items:center;gap:22px;font-size:14px;color:var(--muted)}
+  .nav-right a:hover{color:var(--text)}
+  .nav-cta{background:var(--crimson);color:#fff;padding:8px 16px;border-radius:10px;font-size:14px;font-weight:500}
+  .nav-cta:hover{background:#c2323f}
+
+  /* hero */
+  .hero{padding:26px 0 56px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  .hero-copy{text-align:center}
+  .hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(52px,7vw,86px);line-height:1;letter-spacing:-.02em;margin-bottom:12px}
+  .hero .sub{font-size:19px;color:var(--muted);margin-bottom:28px}
+  .hero .desc{font-size:17px;line-height:1.75;color:rgba(255,228,192,.82);max-width:48ch;margin:0 0 30px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:12px;background:var(--crimson);color:#fff;font-weight:500}
+  .btn:hover{background:#c2323f}
+  .btn .lab{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+  .btn .lab .s{font-size:10px;opacity:.8}
+  .btn .lab .m{font-size:14px}
+  .free{font-size:13px;color:var(--muted);text-align:center;margin-top:18px}
+
+    .hero-art{position:relative}
+  .hero-art::before{content:'';position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);
+    width:min(560px,86vw);height:min(560px,86vw);border-radius:50%;
+    background:radial-gradient(circle, rgba(234,134,42,0.30), rgba(234,134,42,0) 66%);
+    filter:blur(8px);pointer-events:none}
+  .hero-art .phone{margin:0 auto;position:relative}
+  .phone{width:min(292px,70vw);margin:0 auto;background:#0E0906;border-radius:38px;padding:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .phone video{width:100%;display:block;border-radius:28px}
+
+  /* bands */
+    .band{padding:80px 0;border-top:1px solid var(--line);position:relative}
+    .band:nth-of-type(even)::before{content:'';position:absolute;top:0;bottom:0;left:50%;
+    transform:translateX(-50%);width:100vw;background:rgba(255,228,192,0.030);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);pointer-events:none}
+  .band:nth-of-type(even){border-top:none}
+  .band > *{position:relative}
+  .band:first-of-type{margin-top:0}
+  .band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.6vw,42px);font-weight:600;line-height:1.1;margin-bottom:14px}
+  .band p.lede{font-size:17px;color:rgba(255,228,192,.78);line-height:1.75;max-width:54ch}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:38px}
+  .step{background:rgba(255,228,192,0.05);border:1px solid var(--line);border-radius:16px;padding:24px 22px}
+  .step .n{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;letter-spacing:.16em;color:var(--gold);margin-bottom:10px}
+  .step h3{font-size:17px;font-weight:500;margin-bottom:6px}
+  .step p{font-size:15px;color:var(--muted);line-height:1.7}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .split img{width:min(260px,60vw);border-radius:22px;display:block;margin:0 auto;box-shadow:0 22px 60px rgba(0,0,0,.5)}
+  .facts{list-style:none;margin-top:22px}
+  .facts li{position:relative;padding-left:22px;font-size:15.5px;color:var(--muted);margin-bottom:9px}
+  .facts li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+
+  .price{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+  .pill{background:rgba(255,228,192,0.05);border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:15px}
+  .pill b{display:block;font-weight:500;margin-bottom:2px}
+  .pill span{font-size:13px;color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);padding:32px 0 46px;font-size:13px;color:var(--muted)}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .foot a:hover{color:var(--text)}
+
+  @media(max-width:860px){
+    .steps{grid-template-columns:1fr;gap:26px}
+    .split{grid-template-columns:1fr;gap:34px}
+    .band{padding:56px 0}
+    .band:first-of-type{margin-top:56px}
+    .hero{padding:20px 0 40px}
+    .hero-grid{grid-template-columns:1fr;gap:30px}
+    .phone{width:min(230px,60vw)}
+    .shell{padding:0 22px}
+    .nav-right{gap:16px;font-size:13px}
+  }
+</style>
+</head>
+<body>
+<div class="stripe"></div>
+
+<div class="nav"><div class="shell nav-in">
+  <a class="nav-brand" href="/dicedrop/" aria-label="Dice Drop"><img src="/cards/dicedrop.png" alt=""></a>
+  <div class="nav-right">
+    <a href="https://topsidegames.com">Topside Games</a>
+    <a href="/contact">Contact</a>
+  </div>
+</div></div>
+
+<div class="shell">
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1>Dice Drop</h1>
+        <p class="sub">A drop and merge game</p>
+        <div class="btns">
+          <a class="btn" href="https://apps.apple.com/us/app/topside-dice-drop/id6778957322"><span class="lab"><span class="s">Download on the</span><span class="m">App Store</span></span></a>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.topside.dicedrop"><span class="lab"><span class="s">Get it on</span><span class="m">Google Play</span></span></a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="phone"><video autoplay muted loop playsinline preload="auto"><source src="/dicedrop/gameplay.mp4" type="video/mp4"></video></div>
+        <p class="free">Free to play. Optional one-time upgrade, no subscription.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <h2>How it plays.</h2>
+    <p class="lede">Drop and rotate dice pieces. Match adjacent dice of the same value and they merge up. Combine 6s to clear them from the board, chain one merge into the next, and climb the global leaderboard.</p>
+    <div class="steps">
+      <div class="step"><p class="n">01</p><h3>Drop and rotate</h3><p>Pieces fall onto a five wide board. Rotate them on the way down.</p></div>
+      <div class="step"><p class="n">02</p><h3>Match and merge</h3><p>Two dice of the same value sitting next to each other merge into the next number up.</p></div>
+      <div class="step"><p class="n">03</p><h3>Clear the sixes</h3><p>Combine 6s and they leave the board. One merge can trigger the next.</p></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="split">
+      <div>
+        <h2>There is a leaderboard.</h2>
+        <p class="lede">Scores post to a global top 100. Filter it and see where a run actually stands.</p>
+        <ul class="facts">
+          <li>Filter by difficulty, period and scope</li>
+          <li>Separate board for unassisted runs</li>
+          <li>Pick a display name, no account needed</li>
+        </ul>
+      </div>
+      <img src="/dicedrop/shots/hero-back.jpg" alt="Dice Drop leaderboard">
+    </div>
+  </section>
+
+  <section class="band">
+    <h2>What it costs.</h2>
+    <p class="lede">Free to play, with one optional purchase. Nothing recurring.</p>
+    <div class="price">
+      <div class="pill"><b>Free</b><span>The whole game, with ads</span></div>
+      <div class="pill"><b>One-time upgrade</b><span>Removes ads, kept forever</span></div>
+      <div class="pill"><b>No subscription</b><span>There is nothing to cancel</span></div>
+    </div>
+  </section>
+</div>
+
+<footer><div class="shell foot">
+  <span>&copy; 2026 John Manion</span>
+  <span><a href="/dicedrop/privacy/">Privacy</a> &nbsp;&middot;&nbsp; <a href="/dicedrop/tos/">Terms</a> &nbsp;&middot;&nbsp; <a href="/contact">Contact</a></span>
+</div></footer>
+</body>
+</html>
