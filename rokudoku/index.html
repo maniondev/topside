@@ -19,16 +19,16 @@
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   :root{
-    --bg:#F7E8D6; --panel:#FBF7F0; --line:rgba(90,68,32,0.16);
+    --bg:#F6E4DE; --panel:#FBF7F0; --line:rgba(90,68,32,0.16);
     --text:#1E1410; --muted:#7A6050; --ink:#4A3020; --crimson:#E5384A; --orange:#EA862A; --gold:#B98A20;
   }
   html{background-color:var(--bg)}
   body{
     color:var(--text);
     background-image:
-      radial-gradient(900px 620px at 78% 6%, rgba(226,138,43,0.17), rgba(0,0,0,0) 62%),
-      radial-gradient(760px 560px at 6% 42%, rgba(180,84,26,0.10), rgba(0,0,0,0) 64%),
-      radial-gradient(1000px 700px at 50% 108%, rgba(226,138,43,0.10), rgba(0,0,0,0) 60%);
+      radial-gradient(900px 620px at 78% 6%, rgba(214,58,74,0.16), rgba(0,0,0,0) 62%),
+      radial-gradient(760px 560px at 6% 42%, rgba(150,38,47,0.11), rgba(0,0,0,0) 64%),
+      radial-gradient(1000px 700px at 50% 108%, rgba(214,58,74,0.10), rgba(0,0,0,0) 60%);
     background-attachment:fixed;background-repeat:no-repeat;font-family:'DM Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
   a{text-decoration:none;color:inherit}
   .stripe{height:4px;background:linear-gradient(90deg,var(--crimson),var(--orange) 50%,var(--gold))}
@@ -48,7 +48,7 @@
   .hero{padding:26px 0 56px}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
   .hero-copy{text-align:center}
-  .hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+  .hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--crimson);margin-bottom:14px}
   .hero h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(62px,8.6vw,116px);line-height:.98;letter-spacing:-.025em;margin-bottom:14px;color:var(--ink)}
   .hero .sub{font-size:19px;color:var(--muted);margin-bottom:28px}
   .hero .desc{font-size:17px;line-height:1.75;color:rgba(255,228,192,.82);max-width:48ch;margin:0 0 30px}
@@ -63,7 +63,7 @@
     .hero-art{position:relative}
   .hero-art::before{content:'';position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);
     width:min(560px,86vw);height:min(560px,86vw);border-radius:50%;
-    background:radial-gradient(circle, rgba(180,84,26,0.20), rgba(180,84,26,0) 66%);
+    background:radial-gradient(circle, rgba(150,38,47,0.20), rgba(150,38,47,0) 66%);
     filter:blur(8px);pointer-events:none}
   .hero-art .phone{margin:0 auto;position:relative}
   .phone{width:min(292px,70vw);margin:0 auto;background:#1E1410;border-radius:38px;padding:10px;box-shadow:0 26px 66px rgba(90,40,10,.22)}
@@ -81,7 +81,7 @@
   .band p.lede{font-size:17px;color:var(--muted);line-height:1.75;max-width:54ch}
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:38px}
   .step{background:rgba(255,255,255,0.58);border:1px solid var(--line);border-radius:16px;padding:24px 22px}
-  .step .n{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;letter-spacing:.16em;color:var(--gold);margin-bottom:10px}
+  .step .n{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;letter-spacing:.16em;color:#B02A38;margin-bottom:10px}
   .step h3{font-size:17px;font-weight:500;margin-bottom:6px}
   .step p{font-size:15px;color:var(--muted);line-height:1.7}
 
@@ -89,7 +89,7 @@
   .split img{width:min(260px,60vw);border-radius:22px;display:block;margin:0 auto;box-shadow:0 20px 52px rgba(90,40,10,.20)}
   .facts{list-style:none;margin-top:22px}
   .facts li{position:relative;padding-left:22px;font-size:15.5px;color:var(--muted);margin-bottom:9px}
-  .facts li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+  .facts li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--crimson)}
 
   .price{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
   .pill{background:rgba(255,255,255,0.58);border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:15px}

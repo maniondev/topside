@@ -49,21 +49,26 @@
   .poster{position:relative;display:grid;grid-template-columns:1.05fr 0.95fr;gap:40px;align-items:end;
     border-radius:28px;overflow:hidden;padding:44px 44px 0;min-height:400px;
     box-shadow:0 16px 46px rgba(90,40,10,0.11)}
-  .poster.dice{background-color:#E2732A;background-image:url('/dicedrop/art/pattern.jpg');
-    background-size:cover;background-position:center}
+  /* The colour is a CSS gradient so it stays crisp at any size; only the dice
+     scatter comes from a bitmap, multiplied over the top. */
+  .poster.dice{background-color:#E2732A;
+    background-image:url('/dicedrop/art/dice-mul.jpg'),
+      linear-gradient(94deg,#DD3C47 0%,#DE523E 20%,#E56B35 40%,#E67B2F 60%,#E8852B 85%,#E7852B 100%);
+    background-size:cover,cover;background-position:center,center;
+    background-blend-mode:multiply,normal}
   /* The copy sits over the crimson corner, where dark text runs about 3:1.
      This lifts just that patch toward the lighter orange so it clears AA. */
   .poster.dice::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
     background:radial-gradient(78% 96% at 16% 52%, rgba(255,206,138,0.52), rgba(255,206,138,0) 68%)}
   .poster.dice .copy{position:relative;z-index:2;color:#2A1206}
-  .poster.dice .blurb{font-size:16px;line-height:1.72;color:#33150A;max-width:42ch;margin:0 0 22px}
+  .poster.dice .blurb{font-size:16px;font-weight:500;line-height:1.72;color:#2B1105;max-width:42ch;margin:0 0 22px}
   .poster.dice .chip{background:rgba(38,16,5,.80);color:#FFE7CB}
   .poster.dice .cta{background:#2A1206;color:#FFF3E2}
   .poster.dice .cta:hover{background:#3E1B0A}
   .mark{display:block;height:auto;margin:0 0 18px;filter:drop-shadow(0 10px 22px rgba(70,24,4,.32))}
   .mark.row{width:min(520px,100%)}
-  .poster.classic{background-color:#96262F;background-image:linear-gradient(150deg,#B8323F 0%,#8A222C 65%,#6E1922 100%)}
-  .poster.roku{background-color:#B4541A;background-image:linear-gradient(150deg,#E28A2B 0%,#B4541A 64%,#8A3D0F 100%)}
+  .poster.classic{background-color:#33200F;background-image:linear-gradient(150deg,#4E2E15 0%,#2C1A0C 64%,#221308 100%)}
+  .poster.roku{background-color:#96262F;background-image:linear-gradient(150deg,#B8323F 0%,#8A222C 65%,#6E1922 100%)}
   .poster.kids{background-color:#B08D1E;background-image:linear-gradient(150deg,#E0B93A 0%,#B08D1E 64%,#866A14 100%)}
   .poster .copy{padding-bottom:46px;color:#F4EDE2;align-self:center}
   .card-logo{width:62px;height:62px;border-radius:15px;display:block;margin-bottom:18px;box-shadow:0 8px 22px rgba(0,0,0,0.34)}
@@ -77,11 +82,13 @@
   .cta.soft{background:rgba(255,255,255,0.16);color:#fff}
 
   .shot{display:flex;justify-content:center;align-items:flex-end;height:100%}
-  .duo{display:flex;align-items:flex-end;justify-content:center;transform:translateY(18px)}
+  /* The negative margin takes the crop out of the card's height rather than
+     just hiding it, so the banner gets shorter as the phones drop. */
+  .duo{display:flex;align-items:flex-end;justify-content:center;transform:translateY(22px);margin-bottom:-84px}
   .duo .p{display:block;background:#0e0b08;border-radius:30px;padding:6px;flex:none}
   .duo .p img{display:block;width:100%;height:auto;border-radius:25px}
-  .duo .back{width:196px;transform:rotate(-5deg) translateY(-34px);margin-right:-54px;box-shadow:0 18px 44px rgba(0,0,0,0.38);opacity:.97}
-  .duo .front{width:234px;transform:rotate(2deg);position:relative;z-index:2;box-shadow:0 -6px 46px rgba(0,0,0,0.45)}
+  .duo .back{width:196px;transform:rotate(-5deg) translateY(-34px);margin-right:-54px;filter:drop-shadow(-8px 20px 22px rgba(58,14,2,.46));opacity:.97}
+  .duo .front{width:234px;transform:rotate(2deg);position:relative;z-index:2;filter:drop-shadow(-12px 22px 26px rgba(58,14,2,.52))}
 
   .poster.dice .shot{position:relative;z-index:2}
 
@@ -108,10 +115,11 @@
     .poster .copy{padding-bottom:8px}
     .shell{padding:0 20px}
     .hero{padding:34px 0 50px}
-    .duo{transform:translateY(14px)}
+    .duo{transform:translateY(18px);margin-bottom:-76px}
     .duo .back{width:168px;margin-right:-46px;transform:rotate(-5deg) translateY(-28px)}
     .duo .front{width:200px}
-    .poster.dice{background-image:url('/dicedrop/art/pattern-v.jpg')}
+    .poster.dice{background-image:url('/dicedrop/art/dice-mul-v.jpg'),
+      linear-gradient(94deg,#DD3C47 0%,#DE523E 20%,#E56B35 40%,#E67B2F 60%,#E8852B 85%,#E7852B 100%)}
     .poster.dice::before{background:radial-gradient(96% 62% at 50% 26%, rgba(255,206,138,0.50), rgba(255,206,138,0) 70%)}
     .mark.row{width:min(260px,72%)}
     .trio{transform:translateY(14px)}
@@ -159,8 +167,8 @@
       </div>
       <div class="shot">
         <div class="duo">
-          <span class="p back"><img src="/dicedrop/shots/card-board-588.jpg" srcset="/dicedrop/shots/card-board-276.jpg 276w, /dicedrop/shots/card-board-400.jpg 400w, /dicedrop/shots/card-board-588.jpg 588w" sizes="(max-width:520px) 138px, (max-width:900px) 168px, 196px" width="1206" height="2622" alt="Dice Drop leaderboard"></span>
-          <span class="p front"><img src="/dicedrop/shots/card-play-702.jpg" srcset="/dicedrop/shots/card-play-332.jpg 332w, /dicedrop/shots/card-play-480.jpg 480w, /dicedrop/shots/card-play-702.jpg 702w" sizes="(max-width:520px) 166px, (max-width:900px) 200px, 234px" width="1206" height="2622" alt="Dice Drop gameplay"></span>
+          <span class="p back"><img src="/dicedrop/shots/card-board-880.jpg" srcset="/dicedrop/shots/card-board-276.jpg 276w, /dicedrop/shots/card-board-400.jpg 400w, /dicedrop/shots/card-board-588.jpg 588w, /dicedrop/shots/card-board-880.jpg 880w" sizes="(max-width:520px) 200px, (max-width:900px) 240px, 280px" width="1206" height="2622" alt="Dice Drop leaderboard"></span>
+          <span class="p front"><img src="/dicedrop/shots/card-play-1020.jpg" srcset="/dicedrop/shots/card-play-332.jpg 332w, /dicedrop/shots/card-play-480.jpg 480w, /dicedrop/shots/card-play-702.jpg 702w, /dicedrop/shots/card-play-1020.jpg 1020w" sizes="(max-width:520px) 240px, (max-width:900px) 290px, 336px" width="1206" height="2622" alt="Dice Drop gameplay"></span>
         </div>
       </div>
     </a>
