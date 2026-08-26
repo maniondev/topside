@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dice Drop - Layout B</title>
+<title>Dice Drop - Orange</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,16 +11,17 @@
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   :root{
-    --bg:#1C1008; --panel:#2A1810; --line:rgba(255,228,192,0.14);
-    --text:#FFE4C0; --muted:#C88E5C; --crimson:#D94050; --orange:#EA862A; --gold:#DFB945;
+    --bg:#B4541A; --panel:rgba(255,255,255,0.08); --line:rgba(255,236,214,0.22);
+    --text:#FFF2E4; --muted:#F7D3B4; --crimson:#D94050; --orange:#EA862A; --gold:#FFD98A;
   }
-  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  html{background:linear-gradient(180deg,#C7621F 0%,#B4541A 42%,#8E3F11 100%);min-height:100%}
+  body{color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
   a{text-decoration:none;color:inherit}
   .stripe{height:4px;background:linear-gradient(90deg,var(--crimson),var(--orange) 50%,var(--gold))}
   .shell{width:100%;max-width:1120px;margin:0 auto;padding:0 32px}
 
   /* nav */
-  .nav{position:sticky;top:0;z-index:20;background:rgba(28,16,8,0.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{position:sticky;top:0;z-index:20;background:rgba(150,68,20,0.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
   .nav-brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500}
   .nav-brand img{width:34px;height:34px;border-radius:9px;display:block}
@@ -36,34 +37,34 @@
   .hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
   .hero h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(52px,7vw,86px);line-height:1;letter-spacing:-.02em;margin-bottom:12px}
   .hero .sub{font-size:19px;color:var(--muted);margin-bottom:28px}
-  .hero .desc{font-size:17px;line-height:1.75;color:rgba(255,228,192,.82);max-width:48ch;margin:0 0 30px}
+  .hero .desc{font-size:17px;line-height:1.75;color:rgba(255,242,228,.86);max-width:48ch;margin:0 0 30px}
   .btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:12px;background:var(--crimson);color:#fff;font-weight:500}
-  .btn:hover{background:#c2323f}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:12px;background:#2A1206;color:#FFF2E4;font-weight:500}
+  .btn:hover{background:#411C09}
   .btn .lab{display:flex;flex-direction:column;line-height:1.15;text-align:left}
   .btn .lab .s{font-size:10px;opacity:.8}
   .btn .lab .m{font-size:14px}
   .free{font-size:13px;color:var(--muted);text-align:center;margin-top:18px}
 
   .hero-art .phone{margin:0 auto}
-  .phone{width:min(292px,70vw);margin:0 auto;background:#0E0906;border-radius:38px;padding:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .phone{width:min(292px,70vw);margin:0 auto;background:#2A1206;border-radius:38px;padding:10px;box-shadow:0 30px 80px rgba(80,30,4,.45)}
   .phone video{width:100%;display:block;border-radius:28px}
 
   /* bands */
   .band{padding:80px 0;border-top:1px solid var(--line)}
   .band:first-of-type{margin-top:0}
   .band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.6vw,42px);font-weight:600;line-height:1.1;margin-bottom:14px}
-  .band p.lede{font-size:17px;color:rgba(255,228,192,.78);line-height:1.75;max-width:54ch}
+  .band p.lede{font-size:17px;color:rgba(255,242,228,.86);line-height:1.75;max-width:54ch}
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:38px}
-  .step .n{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;letter-spacing:.16em;color:var(--gold);margin-bottom:10px}
+  .step .n{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;letter-spacing:.16em;color:#FFE1B0;margin-bottom:10px}
   .step h3{font-size:17px;font-weight:500;margin-bottom:6px}
   .step p{font-size:15px;color:var(--muted);line-height:1.7}
 
   .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-  .split img{width:min(260px,60vw);border-radius:22px;display:block;margin:0 auto;box-shadow:0 22px 60px rgba(0,0,0,.5)}
+  .split img{width:min(260px,60vw);border-radius:22px;display:block;margin:0 auto;box-shadow:0 22px 60px rgba(80,30,4,.40)}
   .facts{list-style:none;margin-top:22px}
   .facts li{position:relative;padding-left:22px;font-size:15.5px;color:var(--muted);margin-bottom:9px}
-  .facts li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+  .facts li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:#FFD98A}
 
   .price{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
   .pill{border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:15px}
