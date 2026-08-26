@@ -112,6 +112,12 @@
     .shell{padding:0 22px}
     .nav-right{gap:16px;font-size:13px}
   }
+
+  /* Screen recording, not a full device capture, so it gets rounded corners
+     and no bezel rather than pretending to be a whole phone. */
+  .recording{display:block;width:min(292px,70vw);margin:0 auto;border-radius:26px;
+    box-shadow:0 26px 66px rgba(0,0,0,.55)}
+  @media(max-width:900px){ .recording{width:min(230px,60vw)} }
 </style>
 </head>
 <body>
@@ -137,7 +143,9 @@
         </div>
       </div>
       <div class="hero-art">
-        <div class="phone"><video autoplay muted loop playsinline preload="auto"><source src="/dicedrop/gameplay.mp4" type="video/mp4"></video></div>
+        <video class="recording" autoplay muted loop playsinline preload="metadata">
+          <source src="/dicedrop/play.mp4" type="video/mp4">
+        </video>
         <p class="free">Free to play. Optional one-time upgrade, no subscription.</p>
       </div>
     </div>
@@ -164,7 +172,7 @@
           <li>Pick a display name, no account needed</li>
         </ul>
       </div>
-      <img src="/dicedrop/shots/hero-back.jpg" alt="Dice Drop leaderboard">
+      <img src="/dicedrop/shots/card-board.jpg" alt="Dice Drop leaderboard">
     </div>
   </section>
 
