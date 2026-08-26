@@ -49,7 +49,19 @@
   .poster{position:relative;display:grid;grid-template-columns:1.05fr 0.95fr;gap:40px;align-items:end;
     border-radius:28px;overflow:hidden;padding:44px 44px 0;min-height:400px;
     box-shadow:0 16px 46px rgba(90,40,10,0.11)}
-  .poster.dice{background-color:#2A170C;background-image:linear-gradient(150deg,#402313 0%,#24140A 62%,#1C1008 100%)}
+  .poster.dice{background-color:#E2732A;background-image:url('/dicedrop/art/pattern.jpg');
+    background-size:cover;background-position:center}
+  /* The copy sits over the crimson corner, where dark text runs about 3:1.
+     This lifts just that patch toward the lighter orange so it clears AA. */
+  .poster.dice::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+    background:radial-gradient(78% 96% at 16% 52%, rgba(255,206,138,0.52), rgba(255,206,138,0) 68%)}
+  .poster.dice .copy{position:relative;z-index:2;color:#2A1206}
+  .poster.dice .blurb{font-size:16px;line-height:1.72;color:#33150A;max-width:42ch;margin:0 0 22px}
+  .poster.dice .chip{background:rgba(38,16,5,.80);color:#FFE7CB}
+  .poster.dice .cta{background:#2A1206;color:#FFF3E2}
+  .poster.dice .cta:hover{background:#3E1B0A}
+  .mark{display:block;height:auto;margin:0 0 18px;filter:drop-shadow(0 10px 22px rgba(70,24,4,.32))}
+  .mark.row{width:min(520px,100%)}
   .poster.classic{background-color:#96262F;background-image:linear-gradient(150deg,#B8323F 0%,#8A222C 65%,#6E1922 100%)}
   .poster.roku{background-color:#B4541A;background-image:linear-gradient(150deg,#E28A2B 0%,#B4541A 64%,#8A3D0F 100%)}
   .poster.kids{background-color:#B08D1E;background-image:linear-gradient(150deg,#E0B93A 0%,#B08D1E 64%,#866A14 100%)}
@@ -71,12 +83,7 @@
   .duo .back{width:196px;transform:rotate(-5deg) translateY(-34px);margin-right:-54px;box-shadow:0 18px 44px rgba(0,0,0,0.38);opacity:.97}
   .duo .front{width:234px;transform:rotate(2deg);position:relative;z-index:2;box-shadow:0 -6px 46px rgba(0,0,0,0.45)}
 
-  /* A warm wash behind the Dice Drop phones so the dark art reads off the dark card. */
-  .poster.dice .shot{position:relative}
-  .poster.dice .shot::before{content:'';position:absolute;left:-14%;right:-14%;top:-6%;bottom:0;
-    background:radial-gradient(62% 56% at 50% 56%, rgba(255,216,170,0.32), rgba(255,216,170,0) 74%);
-    pointer-events:none}
-  .poster.dice .duo{position:relative;z-index:1}
+  .poster.dice .shot{position:relative;z-index:2}
 
   .trio{display:flex;align-items:flex-end;justify-content:center;transform:translateY(18px)}
   .trio .p{display:block;background:#0e0b08;border-radius:26px;padding:5px;flex:none}
@@ -104,6 +111,9 @@
     .duo{transform:translateY(14px)}
     .duo .back{width:168px;margin-right:-46px;transform:rotate(-5deg) translateY(-28px)}
     .duo .front{width:200px}
+    .poster.dice{background-image:url('/dicedrop/art/pattern-v.jpg')}
+    .poster.dice::before{background:radial-gradient(96% 62% at 50% 26%, rgba(255,206,138,0.50), rgba(255,206,138,0) 70%)}
+    .mark.row{width:min(260px,72%)}
     .trio{transform:translateY(14px)}
     .trio .second{width:150px;margin-right:-44px}
     .trio .lead{width:182px}
@@ -139,10 +149,11 @@
 
     <a class="poster dice" href="/dicedrop">
       <div class="copy">
-        <img class="card-logo" src="/cards/dicedrop.png" alt="Topside: Dice Drop app icon">
-        <p class="eyebrow">iPhone &amp; Android</p>
-        <h2>Dice Drop</h2>
-        <p>Drop and rotate dice pieces. Match adjacent dice of the same value and they merge up. Combine 6s to clear them from the board, chain one merge into the next, and climb the global leaderboard.</p>
+        <picture>
+          <source media="(max-width:900px)" srcset="/dicedrop/art/wordmark.png">
+          <img class="mark row" src="/dicedrop/art/wordmark-row.png" width="945" height="176" alt="Dice Drop">
+        </picture>
+        <p class="blurb">Match adjacent dice of the same value and they merge up. Combine 6s to clear them, chain one merge into the next, and climb the global leaderboard.</p>
         <div class="chips"><span class="chip">Global leaderboard</span><span class="chip">Chain reactions</span></div>
         <span class="cta">See the game →</span>
       </div>
