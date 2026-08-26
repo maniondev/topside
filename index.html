@@ -24,18 +24,20 @@
     --cream:#F0EAE0; --red:#E5384A; --orange:#EA862A; --gold:#DFB945;
     --text:#1E1410; --muted:#7A6050; --ink:#4A3020; --line:rgba(90,68,32,0.15);
   }
-  /* Slightly deeper cream ground so the warm patches read as glow rather than
-     tint. They scroll with the page, so the scatter runs top to bottom. */
-  html{background-color:#EBE3D4}
+  /* Light cream ground with distinct orange patches. They need clear cream
+     between them, otherwise they overlap into one flat tint. */
+  html{background-color:#F2ECE1}
   body{color:var(--text);
     background-image:
-      radial-gradient(760px 520px at 86% 2%,  rgba(255,230,192,0.95), rgba(255,230,192,0) 66%),
-      radial-gradient(640px 460px at 6%  15%, rgba(255,226,186,0.82), rgba(255,226,186,0) 68%),
-      radial-gradient(820px 560px at 66% 33%, rgba(255,233,198,0.90), rgba(255,233,198,0) 66%),
-      radial-gradient(600px 440px at 10% 51%, rgba(255,224,182,0.80), rgba(255,224,182,0) 68%),
-      radial-gradient(880px 580px at 88% 68%, rgba(255,230,192,0.90), rgba(255,230,192,0) 66%),
-      radial-gradient(700px 500px at 22% 86%, rgba(255,228,190,0.84), rgba(255,228,190,0) 68%),
-      radial-gradient(900px 600px at 60% 99%, rgba(255,234,200,0.88), rgba(255,234,200,0) 66%);
+      radial-gradient(460px 360px at 88%  2%, rgba(246,170,84,0.40), rgba(246,170,84,0) 70%),
+      radial-gradient(380px 300px at 14% 11%, rgba(240,150,70,0.30), rgba(240,150,70,0) 70%),
+      radial-gradient(520px 400px at 72% 26%, rgba(246,176,92,0.34), rgba(246,176,92,0) 70%),
+      radial-gradient(400px 320px at 4%  40%, rgba(238,140,64,0.26), rgba(238,140,64,0) 70%),
+      radial-gradient(480px 380px at 92% 52%, rgba(246,172,86,0.36), rgba(246,172,86,0) 70%),
+      radial-gradient(420px 330px at 24% 64%, rgba(242,158,76,0.28), rgba(242,158,76,0) 70%),
+      radial-gradient(540px 420px at 78% 80%, rgba(246,176,92,0.34), rgba(246,176,92,0) 70%),
+      radial-gradient(440px 350px at 10% 92%, rgba(240,150,70,0.30), rgba(240,150,70,0) 70%),
+      radial-gradient(500px 390px at 60% 99%, rgba(246,172,86,0.32), rgba(246,172,86,0) 70%);
     background-repeat:no-repeat;
     font-family:'DM Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
   a{text-decoration:none;color:inherit}
