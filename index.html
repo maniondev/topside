@@ -24,10 +24,14 @@
     --cream:#F0EAE0; --red:#E5384A; --orange:#EA862A; --gold:#DFB945;
     --text:#1E1410; --muted:#7A6050; --ink:#4A3020; --line:rgba(90,68,32,0.15);
   }
-  html{background-color:var(--cream);
-    background-image:linear-gradient(rgba(240,234,224,0.68),rgba(240,234,224,0.68)),url('/bg.svg');
-    background-size:auto,240%;background-position:0 0,top left;background-repeat:no-repeat,repeat-y}
-  body{color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  html{background-color:var(--cream)}
+  body{color:var(--text);
+    background-image:
+      radial-gradient(1100px 780px at 84% 0%, rgba(240,138,44,0.24), rgba(0,0,0,0) 62%),
+      radial-gradient(880px 700px at 2% 34%, rgba(229,56,74,0.11), rgba(0,0,0,0) 64%),
+      radial-gradient(1200px 820px at 46% 104%, rgba(223,185,69,0.20), rgba(0,0,0,0) 62%);
+    background-attachment:fixed;background-repeat:no-repeat;
+    font-family:'DM Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
   a{text-decoration:none;color:inherit}
   .stripe{height:5px;background:linear-gradient(90deg,var(--red) 0%,var(--orange) 50%,var(--gold) 100%)}
   .shell{width:100%;max-width:1180px;margin:0 auto;padding:0 34px}
