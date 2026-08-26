@@ -23,19 +23,19 @@
   .nav{position:sticky;top:0;z-index:20;background:rgba(28,16,8,0.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
   .nav-brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500}
-  .nav-brand img{width:30px;height:30px;border-radius:8px}
+  .nav-brand img{width:34px;height:34px;display:block}
   .nav-right{display:flex;align-items:center;gap:22px;font-size:14px;color:var(--muted)}
   .nav-right a:hover{color:var(--text)}
   .nav-cta{background:var(--crimson);color:#fff;padding:8px 16px;border-radius:10px;font-size:14px;font-weight:500}
   .nav-cta:hover{background:#c2323f}
 
   /* hero */
-  .hero{padding:64px 0 76px}
+  .hero{padding:44px 0 60px}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
   .hero-copy{text-align:left}
   .hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
   .hero h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(52px,7vw,86px);line-height:1;letter-spacing:-.02em;margin-bottom:12px}
-  .hero .sub{font-size:19px;color:var(--muted);margin-bottom:22px}
+  .hero .sub{font-size:19px;color:var(--muted);margin-bottom:28px}
   .hero .desc{font-size:17px;line-height:1.75;color:rgba(255,228,192,.82);max-width:48ch;margin:0 0 30px}
   .btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
   .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:12px;background:#F7EDDE;color:#1C1008;font-weight:500}
@@ -46,7 +46,7 @@
   .free{font-size:13px;color:var(--muted)}
 
   .hero-art .phone{margin:0 auto}
-  .phone{width:min(300px,72vw);margin:0 auto;background:#0E0906;border-radius:38px;padding:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .phone{width:min(272px,68vw);margin:0 auto;background:#0E0906;border-radius:38px;padding:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
   .phone video{width:100%;display:block;border-radius:28px}
 
   /* bands */
@@ -79,8 +79,9 @@
     .split{grid-template-columns:1fr;gap:34px}
     .band{padding:56px 0}
     .band:first-of-type{margin-top:56px}
-    .hero{padding:44px 0 52px}
-    .hero-grid{grid-template-columns:1fr;gap:38px}
+    .hero{padding:32px 0 44px}
+    .hero-grid{grid-template-columns:1fr;gap:30px}
+    .phone{width:min(230px,60vw)}
     .shell{padding:0 22px}
     .nav-right a:not(.nav-cta){display:none}
   }
@@ -90,7 +91,7 @@
 <div class="stripe"></div>
 
 <div class="nav"><div class="shell nav-in">
-  <a class="nav-brand" href="/"><img src="/cards/dicedrop.png" alt=""><span>Dice Drop</span></a>
+  <a class="nav-brand" href="/" aria-label="Topside Games"><img src="/logo.svg" alt="Topside"></a>
   <div class="nav-right">
     <a href="/">All games</a>
     <a href="/contact">Contact</a>
@@ -105,7 +106,6 @@
         <p class="eyebrow">Topside</p>
         <h1>Dice Drop</h1>
         <p class="sub">A drop and merge game</p>
-        <p class="desc">Drop and rotate dice pieces. Match adjacent dice of the same value and they merge up. Combine 6s to clear them from the board, chain one merge into the next, and climb the global leaderboard.</p>
         <div class="btns">
           <a class="btn" href="https://apps.apple.com/us/app/topside-dice-drop/id6778957322"><span class="lab"><span class="s">Download on the</span><span class="m">App Store</span></span></a>
           <a class="btn" href="https://play.google.com/store/apps/details?id=com.topside.dicedrop"><span class="lab"><span class="s">Get it on</span><span class="m">Google Play</span></span></a>
@@ -120,7 +120,7 @@
 
   <section class="band">
     <h2>How it plays.</h2>
-    <p class="lede">Three rules, and the board fills up faster than you expect.</p>
+    <p class="lede">Drop and rotate dice pieces. Match adjacent dice of the same value and they merge up. Combine 6s to clear them from the board, chain one merge into the next, and climb the global leaderboard.</p>
     <div class="steps">
       <div class="step"><p class="n">01</p><h3>Drop and rotate</h3><p>Pieces fall onto a five wide board. Rotate them on the way down.</p></div>
       <div class="step"><p class="n">02</p><h3>Match and merge</h3><p>Two dice of the same value sitting next to each other merge into the next number up.</p></div>
