@@ -71,6 +71,23 @@
   .duo .back{width:196px;transform:rotate(-5deg) translateY(-34px);margin-right:-54px;box-shadow:0 18px 44px rgba(0,0,0,0.38);opacity:.97}
   .duo .front{width:234px;transform:rotate(2deg);position:relative;z-index:2;box-shadow:0 -6px 46px rgba(0,0,0,0.45)}
 
+  /* A warm wash behind the Dice Drop phones so the dark art reads off the dark card. */
+  .poster.dice .shot{position:relative}
+  .poster.dice .shot::before{content:'';position:absolute;left:-14%;right:-14%;top:-6%;bottom:0;
+    background:radial-gradient(62% 56% at 50% 56%, rgba(255,216,170,0.32), rgba(255,216,170,0) 74%);
+    pointer-events:none}
+  .poster.dice .duo{position:relative;z-index:1}
+
+  .trio{display:flex;align-items:flex-end;justify-content:center;transform:translateY(18px)}
+  .trio .p{display:block;background:#0e0b08;border-radius:26px;padding:5px;flex:none}
+  .trio .p img{display:block;width:100%;border-radius:22px}
+  .trio .second{width:174px;transform:rotate(-8deg) translateY(-30px);margin-right:-40px;z-index:1;
+    box-shadow:0 18px 44px rgba(0,0,0,0.36)}
+  .trio .lead{width:212px;transform:rotate(1deg);position:relative;z-index:3;
+    box-shadow:0 -6px 46px rgba(0,0,0,0.45)}
+  .trio .third{width:150px;transform:rotate(9deg) translateY(-14px);margin-left:-56px;z-index:2;
+    box-shadow:0 16px 40px rgba(0,0,0,0.34);opacity:.96}
+
   .soon{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:14px 0 48px}
   .soon img{width:128px;height:128px;border-radius:29px;box-shadow:0 18px 46px rgba(0,0,0,0.42)}
   .soon .soon-label{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;color:#fff;margin:0;opacity:1;max-width:none}
@@ -87,10 +104,17 @@
     .duo{transform:translateY(14px)}
     .duo .back{width:168px;margin-right:-46px;transform:rotate(-5deg) translateY(-28px)}
     .duo .front{width:200px}
+    .trio{transform:translateY(14px)}
+    .trio .second{width:150px;margin-right:-44px}
+    .trio .lead{width:182px}
+    .trio .third{width:130px;margin-left:-40px}
   }
   @media(max-width:520px){
     .duo .back{width:138px;margin-right:-38px;transform:rotate(-5deg) translateY(-22px)}
     .duo .front{width:166px}
+    .trio .second{width:116px;margin-right:-34px}
+    .trio .lead{width:144px}
+    .trio .third{width:102px;margin-left:-32px}
     .card-logo{width:54px;height:54px;border-radius:13px;margin-bottom:14px}
     .soon img{width:104px;height:104px;border-radius:24px}
     .foot{flex-direction:column;gap:6px;text-align:center}
@@ -133,16 +157,16 @@
     <a class="poster classic" href="/classic">
       <div class="copy">
         <p class="eyebrow">iPhone &amp; Android</p>
-        <h2>Classic</h2>
+        <h2>Topside Classic</h2>
         <p>The cube logic puzzle that's harder than it looks and even harder to put down. Roll a cube across a grid and match each face to its target tile. Plan your path, think ahead, and find the perfect route.</p>
         <div class="chips"><span class="chip">Logic puzzle</span><span class="chip">Plan your path</span></div>
         <span class="cta">See the game →</span>
       </div>
       <div class="shot">
-        <div class="soon">
-          <img src="/cards/classic.png" alt="">
-          <p class="soon-label">Out now</p>
-          <p class="soon-sub">iPhone &amp; Android</p>
+        <div class="trio">
+          <span class="p second"><img src="/classic/shots/card-2.jpg" alt=""></span>
+          <span class="p lead"><img src="/classic/shots/card-1.jpg" alt="Topside Classic gameplay"></span>
+          <span class="p third"><img src="/classic/shots/card-3.jpg" alt=""></span>
         </div>
       </div>
     </a>

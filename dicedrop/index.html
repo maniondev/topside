@@ -114,9 +114,11 @@
   }
 
   /* Screen recording, not a full device capture, so it gets rounded corners
-     and no bezel rather than pretending to be a whole phone. */
-  .recording{display:block;width:min(292px,70vw);margin:0 auto;border-radius:26px;
-    box-shadow:0 26px 66px rgba(0,0,0,.55)}
+     and no bezel rather than pretending to be a whole phone. Reserving the
+     aspect ratio keeps it from flashing as a short black box before the
+     metadata loads. */
+  .recording{display:block;width:min(292px,70vw);aspect-ratio:602/1174;margin:0 auto;
+    border-radius:26px;box-shadow:0 26px 66px rgba(0,0,0,.55)}
   @media(max-width:900px){ .recording{width:min(230px,60vw)} }
 </style>
 </head>
@@ -143,7 +145,7 @@
         </div>
       </div>
       <div class="hero-art">
-        <video class="recording" autoplay muted loop playsinline preload="metadata">
+        <video class="recording" width="602" height="1174" autoplay muted loop playsinline preload="auto">
           <source src="/dicedrop/play.mp4" type="video/mp4">
         </video>
         <p class="free">Free to play. Optional one-time upgrade, no subscription.</p>
@@ -152,7 +154,7 @@
   </section>
 
   <section class="band">
-    <h2>How it plays.</h2>
+    <h2>How to play.</h2>
     <p class="lede">Drop and rotate dice pieces. Match adjacent dice of the same value and they merge up. Combine 6s to clear them from the board, chain one merge into the next, and climb the global leaderboard.</p>
     <div class="steps">
       <div class="step"><p class="n">01</p><h3>Drop and rotate</h3><p>Pieces fall onto a five wide board. Rotate them on the way down.</p></div>
@@ -164,7 +166,7 @@
   <section class="band">
     <div class="split">
       <div>
-        <h2>There is a leaderboard.</h2>
+        <h2>Climb the global leaderboard.</h2>
         <p class="lede">Scores post to a global top 100. Filter it and see where a run actually stands.</p>
         <ul class="facts">
           <li>Filter by difficulty, period and scope</li>
