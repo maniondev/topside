@@ -77,7 +77,9 @@
   .poster.dice .blurb{font-size:16px;font-weight:500;line-height:1.72;color:#2B1105;max-width:42ch;margin:0 0 22px}
   .poster.dice .cta{background:#2A1206;color:#FFF3E2}
   .poster.dice .cta:hover{background:#3E1B0A}
-  .mark{display:block;height:auto;margin:0 0 18px;filter:drop-shadow(0 10px 22px rgba(70,24,4,.32))}
+  /* No CSS drop-shadow here. The art already carries its own extruded shadow,
+     and filtering a scaled bitmap rasterises inconsistently between loads. */
+  .mark{display:block;height:auto;margin:0 0 18px}
   .mark.row{width:min(520px,100%)}
   .poster.classic{background-color:#33200F;background-image:linear-gradient(150deg,#4E2E15 0%,#2C1A0C 64%,#221308 100%)}
   .poster.roku{background-color:#96262F;background-image:linear-gradient(150deg,#B8323F 0%,#8A222C 65%,#6E1922 100%)}
