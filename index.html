@@ -81,8 +81,11 @@
      and filtering a scaled bitmap rasterises inconsistently between loads. */
   .mark{display:block;height:auto;margin:0 0 18px}
   .mark.row{width:min(520px,100%)}
-  .mark.toppler{width:min(360px,100%)}
+  .mark.toppler{width:min(360px,100%);margin:4px 0 0}
   .poster.classic{background-color:#33200F;background-image:linear-gradient(150deg,#4E2E15 0%,#2C1A0C 64%,#221308 100%)}
+  .poster.classic .copy{color:#FAF5ED}
+  .poster.classic .cta{background:#FAF5ED;color:#2C1A0C}
+  .poster.classic .cta:hover{background:#FFFFFF}
   .poster.roku{background-color:#96262F;background-image:linear-gradient(150deg,#B8323F 0%,#8A222C 65%,#6E1922 100%)}
   .poster.kids{background-color:#B08D1E;background-image:linear-gradient(150deg,#E0B93A 0%,#B08D1E 64%,#866A14 100%)}
   .poster .copy{padding-bottom:46px;color:#F4EDE2;align-self:center}
@@ -135,7 +138,7 @@
       linear-gradient(94deg,#DD3C47 0%,#DE523E 20%,#E56B35 40%,#E67B2F 60%,#E8852B 85%,#E7852B 100%)}
     .poster.dice::before{background:radial-gradient(96% 62% at 50% 26%, rgba(255,206,138,0.50), rgba(255,206,138,0) 70%)}
     .mark.row{width:min(260px,72%)}
-    .mark.toppler{width:min(210px,62%)}
+    .mark.toppler{width:min(210px,62%);margin:3px 0 4px}
     .trio{transform:translateY(14px);margin-bottom:-34px}
     .trio .second{width:150px;margin-right:-44px}
     .trio .lead{width:182px}
@@ -173,8 +176,15 @@
       <div class="copy">
         <p class="eyebrow">iPhone &amp; Android</p>
         <picture>
-          <source media="(max-width:900px)" srcset="/dicedrop/art/wordmark.png">
-          <img class="mark row" src="/dicedrop/art/wordmark-row.png" width="1917" height="291" alt="Dice Drop">
+          <source media="(max-width:900px)"
+                  srcset="/dicedrop/art/wordmark-340.png 340w,
+                          /dicedrop/art/wordmark-680.png 680w,
+                          /dicedrop/art/wordmark.png 1011w" sizes="260px">
+          <img class="mark row" src="/dicedrop/art/wordmark-row.png"
+               srcset="/dicedrop/art/wordmark-row-520.png 520w,
+                       /dicedrop/art/wordmark-row-1040.png 1040w,
+                       /dicedrop/art/wordmark-row-1560.png 1560w"
+               sizes="520px" width="1917" height="291" alt="Dice Drop">
         </picture>
         <p class="blurb">Match adjacent dice of the same value and they merge up. Combine 6s to clear them, chain one merge into the next, and climb the global leaderboard.</p>
         <span class="cta">See the game →</span>
@@ -191,6 +201,10 @@
       <div class="copy">
         <p class="eyebrow">iPhone &amp; Android</p>
         <img class="mark toppler" src="/classic/art/toppler-light.png"
+             srcset="/classic/art/toppler-light-360.png 360w,
+                     /classic/art/toppler-light-720.png 720w,
+                     /classic/art/toppler-light-1080.png 1080w"
+             sizes="(max-width:900px) 210px, 360px"
              width="1450" height="469" alt="Toppler">
         <p>The cube logic puzzle that's harder than it looks and even harder to put down. Roll a cube across a grid and match each face to its target tile. Plan your path, think ahead, and find the perfect route.</p>
         <span class="cta">See the game →</span>

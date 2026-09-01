@@ -52,7 +52,7 @@
   .hero-copy{text-align:center}
   .hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
   .hero h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(62px,8.6vw,116px);line-height:.98;letter-spacing:-.025em;margin-bottom:14px;color:var(--ink)}
-  .hero h1.wordmark{margin:0 0 16px}
+  .hero h1.wordmark{margin:0 0 -6px}
   .hero h1.wordmark img{display:block;width:min(400px,100%);height:auto;margin:0 auto}
   .hero .sub{font-size:19px;color:var(--muted);margin-bottom:28px}
   .hero .desc{font-size:17px;line-height:1.75;color:rgba(255,228,192,.82);max-width:48ch;margin:0 0 30px}
@@ -137,7 +137,12 @@
     <div class="hero-grid">
       <div class="hero-copy">
         <h1 class="wordmark">
-          <img src="/classic/art/toppler-dark.png" width="1450" height="469" alt="Toppler">
+          <img src="/classic/art/toppler-dark.png"
+               srcset="/classic/art/toppler-dark-400.png 400w,
+                       /classic/art/toppler-dark-800.png 800w,
+                       /classic/art/toppler-dark-1200.png 1200w"
+               sizes="(max-width:860px) 270px, 400px"
+               width="1450" height="469" alt="Toppler">
         </h1>
         <p class="sub">The cube logic puzzle</p>
         <div class="btns">

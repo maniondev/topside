@@ -141,8 +141,15 @@
       <div class="hero-copy">
         <h1 class="wordmark">
           <picture>
-            <source media="(max-width:860px)" srcset="/dicedrop/art/wordmark.png">
-            <img src="/dicedrop/art/wordmark-row.png" width="1917" height="291" alt="Dice Drop">
+            <source media="(max-width:860px)"
+                    srcset="/dicedrop/art/wordmark-340.png 340w,
+                            /dicedrop/art/wordmark-680.png 680w,
+                            /dicedrop/art/wordmark.png 1011w" sizes="340px">
+            <img src="/dicedrop/art/wordmark-row.png"
+                 srcset="/dicedrop/art/wordmark-row-520.png 520w,
+                         /dicedrop/art/wordmark-row-1040.png 1040w,
+                         /dicedrop/art/wordmark-row-1560.png 1560w"
+                 sizes="520px" width="1917" height="291" alt="Dice Drop">
           </picture>
         </h1>
         <p class="sub">A drop and merge game</p>
